@@ -1,0 +1,298 @@
+{
+	"name" : "Coverage Tests",
+	"project" : "org/odftoolkit/odfdom/",
+	"increments" : [{
+			"test" : "doc/ChartTemplateTest.java",
+			"docsin" : ["chartTestTemplate.otc"],
+			"docsout" : ["chartTestTemplate.otc"]
+		}, {
+			"test" : "doc/CreateChildrenElementsTest.java",
+			"docsin" : ["presentation.odp",
+				"empty.odt"],
+			"docsout" : ["CreatChildrenForPresentationTest.odp",
+				"CreatChildrenForChartTest.odt",
+				"CreateChildrenForTableTest.odt",
+				"CreatChildrenForTextTable.odt",
+				"CreatChildrenForGraphic.odg",
+				"CreatChildrenForStyles.odt",
+				"CreatChildrenForEmbedded.odt",
+				"CreatChildrenForSpreadsheet.ods",
+				"CreatChildrenForForm.odt",
+				"CreatChildrenForAnimateTest.odp"]
+		}, {
+			"test" : "doc/CreateTableTest.java",
+			"docsin" : ["empty.odt"],
+			"docsout" : ["tabletest.odt"]
+		}, {
+			"test" : "doc/DefaultStylesTest.java",
+			"docsin" : ["test2.odt"],
+			"docsout" : []
+		}, {
+			"test" : "doc/DocumentCreationTest.java",
+			"docsin" : ["testEmbeddedDoc.odt",
+				"testSaveEmbeddedDoc.odt",
+				"CorruptedMimetypeDoc.odt",
+				"CorruptedMimetypeChart.odc"],
+			"docsout" : ["TestEmpty_OdfTextDocument.odt",
+				"TestEmpty_OdfGraphicsDocument.odg",
+				"TestEmpty_OdfSpreadsheetDocument.ods",
+				"TestEmpty_OdfPresentationDocument.odp",
+				"TestEmpty_OdfChartDocument.odc",
+				"odfdom-wiki-package.odt",
+				"TestCreate_EmbeddedDocuments.odt",
+				"TestAccess_EmbeddedDocument.odt",
+				"TestAccess_EmbeddedinEmbedded.odt",
+				"TestSaveEmbeddedDoc_newName.odt",
+				"TestSaveEmbeddedDoc2.odt",
+				"TestSaveQueerEmbeddedPathDoc1.odt",
+				"TestSaveCorruptedMimetypeDoc.odt"]
+		}, {
+			"test" : "doc/DocumentTest.java",
+			"docsin" : ["invalid.ods",
+				"test2.odt",
+				"no_size_opt.odt",
+				"testDefaultLanguage.odp"],
+			"docsout" : ["list-out.odt",
+				"InvalidUnderlineAttribute.odt",
+				"saving-is-possible.odt"]
+		}, {
+			"test" : "doc/draw/OdfDrawImageTest.java",
+			"docsin" : [],
+			"docsout" : []
+		}, {
+			"test" : "doc/ElementTest.java",
+			"docsin" : [],
+			"docsout" : []
+		}, {
+			"test" : "doc/FactoryManipulationTest.java",
+			"docsin" : [],
+			"docsout" : []
+		}, {
+			"test" : "doc/FrameTest.java",
+			"docsin" : ["frame.odt"]
+		}, {
+			"test" : "doc/GetTextTest.java",
+			"docsin" : ["text-extract.odt"]
+		}, {
+			"test" : "doc/GraphicsTemplateTest.java",
+			"docsin" : ["graphicTestTemplate.otg"],
+			"docsout" : []
+		}, {
+			"test" : "doc/ImageTest.java",
+			"docsin" : ["image.odt"],
+			"docsout" : ["add-images-by-uri.odt",
+				"remove-images.odt",
+				"addimages.odt",
+				"removeimages.odt",
+				"svg-image.odt",
+				"removeAllImages.odt"]
+		}, {
+			"test" : "doc/ListTest.java",
+			"docsin" : ["list.odt"],
+			"docsout" : []
+		}, {
+			"test" : "doc/LoadSaveTest.java",
+			"docsin" : ["not-only-odf.odt"],
+			"docsout" : ["loadsavetest.odt"]
+		}, {
+			"test" : "doc/NamespaceTest.java",
+			"docsin" : [],
+			"docsout" : ["namespacetest.odt"]
+		}, {
+			"test" : "doc/number/OdfCurrencyStyleTest.java",
+			"docsin" : ["TBD"]
+		}, {
+			"test" : "doc/number/OdfDateStyleTest.java",
+			"docsin" : ["TBD"]
+		}, {
+			"test" : "doc/number/OdfNumberStyleTest.java",
+			"docsin" : ["TBD"]
+		}, {
+			"test" : "doc/number/OdfPercentageStyleTest.java",
+			"docsin" : ["TBD"]
+		}, {
+			"test" : "doc/number/OdfTimeStyleTest.java",
+			"docsin" : ["TBD"]
+		}, {
+			"test" : "doc/PresentationTemplateTest.java",
+			"docsin" : ["/presentationTestTemplate.otp"],
+			"docsout" : ["odfdom-test.otp"]
+		}, {
+			"test" : "doc/SlideTest.java",
+			"docsin" : ["Presentation1.odp",
+				"Presentation2.odp",
+				"SlideTest1.odp",
+				"SlideTest2.odp",
+				"SlideTest3.odp"],
+			"docsout" : ["SlideResultSlideName.odp",
+				"SlideResultDelete.odp",
+				"SlideResultDelete2.odp",
+				"SlideResultNew.odp",
+				"SlideResultMoveAndCopy.odp",
+				"SlideResultCopyForeignSlide2.odp",
+				"SlideResultMerge2.odp",
+				"SlideResultMerge1.odp",
+				"SlideResultCopyThreeDoc.odp"]
+		}, {
+			"test" : "doc/SpreadsheetTemplateTest.java",
+			"docsin" : ["spreadsheetTestTemplate.ots"],
+			"docsout" : ["odfdom-test.ots"]
+		}, {
+			"test" : "doc/StyleManipulationTest.java",
+			"docsin" : ["empty.odt"],
+			"docsout" : ["stylemanipulationtest.odt"]
+		}, {
+			"test" : "doc/StyleTest.java",
+			"docsin" : ["sharedautostyles.odt"],
+			"docsout" : []
+		}, {
+			"test" : "doc/table/TableCellRangeTest.java",
+			"docsin" : ["TestSpreadsheetTable.ods", "TestTextTable.odt"],
+			"docsout" : ["TestTextTableMergeCoveredCell.odt",
+				"TestTextTableMergeTwoCell.odt",
+				"TestTextTableMergeTwoCell2.odt",
+				"TestTextTableMergeTable.odt",
+				"TestTextTableMergeFirstTwoColumn.odt",
+				"TestTextTableMergeFirstTwoRow",
+				"TestSpreadsheetTableCellRangeName.ods",
+				"TestSpreadsheetTableMergeExpandCell.ods",
+				"TestTextTableMergeTextExpandCell.odt"]
+		}, {
+			"test" : "doc/table/TableCellTest.java",
+			"docsin" : ["TestSpreadsheetTable.ods", "TestTextTable.odt"],
+			"docsout" : ["TestSpreadsheetTableOutput.ods", "TestTextTableOutput.odt"]
+		}, {
+			"test" : "doc/table/TableRowColumnTest.java",
+			"docsin" : ["TestSpreadsheetTable.ods", "TestTextTable.odt"],
+			"docsout" : ["TestSpreadsheetTableOutput.ods",
+				"TestTextTableChangeSize.odt",
+				"TestTextTableSplitRepeatedColumns.odt",
+				"TestTextTableChangeIndex.odt"]
+		}, {
+			"test" : "doc/table/TableTest.java",
+			"docsin" : ["TestSpreadsheetTable.ods",
+				"TestTextTable.odt",
+				"CreateTableCase.odt",
+				"testGetCellAt.ods",
+				"TestHeaderFooter.odt"],
+			"docsout" : ["TestTextTableOut.odt",
+				"TestTextTableOutput.odt",
+				"TestSetGetWidth.odt",
+				"TestGetSetName.odt",
+				"tableProtected.odt",
+				"TestGetColumnList.odt",
+				"TestGetRowList.odt",
+				"TestSpreadsheetTableOutput.ods"]
+		}, {
+			"test" : "doc/TableTest.java",
+			"docsin" : ["table.odt"],
+			"docsout" : ["TestSave2Tables.odt"]
+		}, {
+			"test" : "doc/text/OdfHeadingTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/text/OdfListStyleTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/text/OdfListTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/text/OdfParagraphTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/text/OdfSpanTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/text/OdfWhitespaceProcessorTest.java",
+			"docsin" : []
+		}, {
+			"test" : "doc/TextTemplateTest.java",
+			"docsin" : ["textTestTemplate.ott"],
+			"docsout" : ["odfdom-test.ott"]
+		}, {
+			"test" : "doc/UnknownPropertiesTest.java",
+			"docsin" : ["unknown_properties.odt"],
+			"docsout" : ["unknown_properties_saved.odt"]
+		}, {
+			"test" : "dom/example/StyleExamplesTest.java",
+			"docsin" : []
+		}, {
+			"test" : "dom/example/WikiExampleTest.java",
+			"docsin" : []
+		}, {
+			"test" : "dom/XPathTest.java",
+			"docsin" : ["XPathTest-foreignPrefix.odp", "XPathTest-foreignPrefix2.odp", "XPathTest-duplicate-prefix.odt"]
+		}, {
+			"test" : "incubator/meta/MetaDocumentStatisticTest.java",
+			"docsin" : ["TBD"],
+			"docsout" : ["XPathTest-ForeignPrefix-output.odp", "XPathTest-ForeignPrefix2-output.odp"]
+		}, {
+			"test" : "incubator/meta/OfficeMetaTest.java",
+			"docsin" : ["metaTest.odt"],
+			"docsout" : ["metaTest_OfficeMetaTest.odt", "EmptyDocForMetaTest.odt", "DocForMetaTest.odt"]
+		}, {
+			"test" : "incubator/search/MONPTest.java",
+			"docsin" : ["navigationtest.odt"],
+			"docsout" : ["testsave1.odt"]
+		}, {
+			"test" : "incubator/search/TextNavigationTest.java",
+			"docsin" : ["TestTextSelection.odt"]
+		}, {
+			"test" : "incubator/search/TextSelectionTest.java",
+			"docsin" : ["TestTextSelection.odt"],
+			"docsout" : ["TextSelectionResultDelete.odt",
+				"TextSelectionResultStyle.odt",
+				"TextSelectionResultHref.odt",
+				"TextSelectionResultReplace.odt",
+				"TextSelectionResultCopyTo.odt",
+				"TextSelectionResultCopyTo1.odt",
+				"TextSelectionResultPatternDelete.odt"]
+		}, {
+			"test" : "incubator/search/TextStyleNavigationTest.java",
+			"docsin" : ["TestStyleSelection.odt"],
+			"docsout" : ["TextStyleSelectionResultInsertFront.odt",
+				"TextStyleSelectionResultInsertEnd.odt",
+				"TextStyleSelectionResultDelete.odt",
+				"TextStyleSelectionResultStyle.odt"]
+		}, {
+			"test" : "pkg/EmbeddedDocumentTest.java",
+			"docsin" : ["performance/Presentation1_INVALID.odp"],
+			"docsout" : ["SaveEmbeddedDoc.odt",
+				"SaveEmbeddedDocSideBySide.odt",
+				"SaveEmbeddedDocIncluded.odt",
+				"RemoveEmbeddedDoc.odt",
+				"TestModifiedEmbeddedDoc.odt",
+				"SaveModifiedEmbeddedDocAlone.odt"]
+		}, {
+			"test" : "pkg/GRDDLTest.java",
+			"docsin" : ["test_rdfmeta.odt"]
+		}, {
+			"test" : "pkg/LoadSaveErrorTest.java",
+			"docsin" : ["OdfTextDocument.odt"]
+		}, {
+			"test" : "pkg/LoadSaveTest.java",
+			"docsin" : ["not-only-odf.odt"],
+			"docsout" : ["loadsavetest.odt"]
+		}, {
+			"test" : "pkg/NoTempFileTest.java",
+			"docsin" : ["image.odt", "test2.odt"],
+			"docsout" : ["test3.odt"]
+		}, {
+			"test" : "pkg/PackagePathTest.java",
+			"docsin" : []
+		}, {
+			"test" : "pkg/PackageTest.java",
+			"docsin" : ["test2.odt", "SimpleFormula.odf"],
+			"docsout" : ["imageCompressed.odp",
+				"PackageLoadTestStep1.ods",
+				"PackageLoadTestStep2.ods",
+				"PackageLoadTestStep3.ods"]
+		}, {
+			"test" : "pkg/RDFMetadataTest.java",
+			"docsin" : ["test_rdfmeta.odt"]
+		}, {
+			"test" : "type/DataTypeTest.java",
+			"docsin" : []
+		}
+	]
+}
