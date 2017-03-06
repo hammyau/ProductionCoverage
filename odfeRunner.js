@@ -20,7 +20,7 @@ function run(test, key, callback) {
 	var cmdArgs = ['-jar', 'odfe.jar'];
 	cmdArgs.push('-a');
 	cmdArgs.push('-o');
-	cmdArgs.push(PRODCOV); //make this a set by the comparisonrun
+	cmdArgs.push(PRODCOV); //make this a set by the comparison run
 	cmdArgs.push('-f');
 
     var docFullName = "";
