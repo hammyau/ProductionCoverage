@@ -1,0 +1,19 @@
+{
+  "name": "pkg/PackageTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/PackageTest.java",
+      "docsin": [
+        "test2.odt",
+        "SimpleFormula.odf"
+      ],
+      "docsout": [
+        "imageCompressed.odp",
+        "PackageLoadTestStep1.ods",
+        "PackageLoadTestStep2.ods",
+        "PackageLoadTestStep3.ods"
+      ]
+    }
+  ]
+}

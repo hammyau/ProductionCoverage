@@ -1,0 +1,12 @@
+{
+  "name": "incubator/search/TextNavigationTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "incubator/search/TextNavigationTest.java",
+      "docsin": [
+        "TestTextSelection.odt"
+      ]
+    }
+  ]
+}

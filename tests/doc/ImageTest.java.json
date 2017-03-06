@@ -1,0 +1,20 @@
+{
+  "name": "doc/ImageTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/ImageTest.java",
+      "docsin": [
+        "image.odt"
+      ],
+      "docsout": [
+        "add-images-by-uri.odt",
+        "remove-images.odt",
+        "addimages.odt",
+        "removeimages.odt",
+        "svg-image.odt",
+        "removeAllImages.odt"
+      ]
+    }
+  ]
+}

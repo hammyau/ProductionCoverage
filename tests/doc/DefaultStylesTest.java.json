@@ -1,0 +1,13 @@
+{
+  "name": "doc/DefaultStylesTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/DefaultStylesTest.java",
+      "docsin": [
+        "test2.odt"
+      ],
+      "docsout": []
+    }
+  ]
+}

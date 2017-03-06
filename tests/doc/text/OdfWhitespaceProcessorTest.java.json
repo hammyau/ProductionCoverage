@@ -1,0 +1,10 @@
+{
+  "name": "doc/text/OdfWhitespaceProcessorTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/text/OdfWhitespaceProcessorTest.java",
+      "docsin": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "doc/CreateChildrenElementsTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/CreateChildrenElementsTest.java",
+      "docsin": [
+        "presentation.odp",
+        "empty.odt"
+      ],
+      "docsout": [
+        "CreatChildrenForPresentationTest.odp",
+        "CreatChildrenForChartTest.odt",
+        "CreateChildrenForTableTest.odt",
+        "CreatChildrenForTextTable.odt",
+        "CreatChildrenForGraphic.odg",
+        "CreatChildrenForStyles.odt",
+        "CreatChildrenForEmbedded.odt",
+        "CreatChildrenForSpreadsheet.ods",
+        "CreatChildrenForForm.odt",
+        "CreatChildrenForAnimateTest.odp"
+      ]
+    }
+  ]
+}

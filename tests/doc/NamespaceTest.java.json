@@ -1,0 +1,13 @@
+{
+  "name": "doc/NamespaceTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/NamespaceTest.java",
+      "docsin": [],
+      "docsout": [
+        "namespacetest.odt"
+      ]
+    }
+  ]
+}

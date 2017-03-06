@@ -1,0 +1,10 @@
+{
+  "name": "doc/text/OdfSpanTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/text/OdfSpanTest.java",
+      "docsin": []
+    }
+  ]
+}

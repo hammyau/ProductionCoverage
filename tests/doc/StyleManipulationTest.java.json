@@ -1,0 +1,15 @@
+{
+  "name": "doc/StyleManipulationTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/StyleManipulationTest.java",
+      "docsin": [
+        "empty.odt"
+      ],
+      "docsout": [
+        "stylemanipulationtest.odt"
+      ]
+    }
+  ]
+}

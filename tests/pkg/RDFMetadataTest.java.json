@@ -1,0 +1,12 @@
+{
+  "name": "pkg/RDFMetadataTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/RDFMetadataTest.java",
+      "docsin": [
+        "test_rdfmeta.odt"
+      ]
+    }
+  ]
+}

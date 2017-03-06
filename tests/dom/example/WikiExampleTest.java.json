@@ -1,0 +1,10 @@
+{
+  "name": "dom/example/WikiExampleTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "dom/example/WikiExampleTest.java",
+      "docsin": []
+    }
+  ]
+}

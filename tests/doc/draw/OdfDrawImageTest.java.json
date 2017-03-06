@@ -1,0 +1,11 @@
+{
+  "name": "doc/draw/OdfDrawImageTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/draw/OdfDrawImageTest.java",
+      "docsin": [],
+      "docsout": []
+    }
+  ]
+}

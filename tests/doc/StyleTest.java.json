@@ -1,0 +1,13 @@
+{
+  "name": "doc/StyleTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/StyleTest.java",
+      "docsin": [
+        "sharedautostyles.odt"
+      ],
+      "docsout": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "incubator/meta/OfficeMetaTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "incubator/meta/OfficeMetaTest.java",
+      "docsin": [
+        "metaTest.odt"
+      ],
+      "docsout": [
+        "metaTest_OfficeMetaTest.odt",
+        "EmptyDocForMetaTest.odt",
+        "DocForMetaTest.odt"
+      ]
+    }
+  ]
+}

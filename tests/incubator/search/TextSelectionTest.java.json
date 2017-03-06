@@ -1,0 +1,21 @@
+{
+  "name": "incubator/search/TextSelectionTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "incubator/search/TextSelectionTest.java",
+      "docsin": [
+        "TestTextSelection.odt"
+      ],
+      "docsout": [
+        "TextSelectionResultDelete.odt",
+        "TextSelectionResultStyle.odt",
+        "TextSelectionResultHref.odt",
+        "TextSelectionResultReplace.odt",
+        "TextSelectionResultCopyTo.odt",
+        "TextSelectionResultCopyTo1.odt",
+        "TextSelectionResultPatternDelete.odt"
+      ]
+    }
+  ]
+}

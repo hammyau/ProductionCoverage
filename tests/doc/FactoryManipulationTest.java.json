@@ -1,0 +1,11 @@
+{
+  "name": "doc/FactoryManipulationTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/FactoryManipulationTest.java",
+      "docsin": [],
+      "docsout": []
+    }
+  ]
+}

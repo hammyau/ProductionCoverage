@@ -1,0 +1,17 @@
+{
+  "name": "doc/table/TableCellTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/table/TableCellTest.java",
+      "docsin": [
+        "TestSpreadsheetTable.ods",
+        "TestTextTable.odt"
+      ],
+      "docsout": [
+        "TestSpreadsheetTableOutput.ods",
+        "TestTextTableOutput.odt"
+      ]
+    }
+  ]
+}

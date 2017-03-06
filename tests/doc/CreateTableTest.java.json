@@ -1,0 +1,15 @@
+{
+  "name": "doc/CreateTableTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/CreateTableTest.java",
+      "docsin": [
+        "empty.odt"
+      ],
+      "docsout": [
+        "tabletest.odt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "pkg/NoTempFileTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/NoTempFileTest.java",
+      "docsin": [
+        "image.odt",
+        "test2.odt"
+      ],
+      "docsout": [
+        "test3.odt"
+      ]
+    }
+  ]
+}

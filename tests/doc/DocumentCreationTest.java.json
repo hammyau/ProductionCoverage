@@ -1,0 +1,30 @@
+{
+  "name": "doc/DocumentCreationTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/DocumentCreationTest.java",
+      "docsin": [
+        "testEmbeddedDoc.odt",
+        "testSaveEmbeddedDoc.odt",
+        "CorruptedMimetypeDoc.odt",
+        "CorruptedMimetypeChart.odc"
+      ],
+      "docsout": [
+        "TestEmpty_OdfTextDocument.odt",
+        "TestEmpty_OdfGraphicsDocument.odg",
+        "TestEmpty_OdfSpreadsheetDocument.ods",
+        "TestEmpty_OdfPresentationDocument.odp",
+        "TestEmpty_OdfChartDocument.odc",
+        "odfdom-wiki-package.odt",
+        "TestCreate_EmbeddedDocuments.odt",
+        "TestAccess_EmbeddedDocument.odt",
+        "TestAccess_EmbeddedinEmbedded.odt",
+        "TestSaveEmbeddedDoc_newName.odt",
+        "TestSaveEmbeddedDoc2.odt",
+        "TestSaveQueerEmbeddedPathDoc1.odt",
+        "TestSaveCorruptedMimetypeDoc.odt"
+      ]
+    }
+  ]
+}

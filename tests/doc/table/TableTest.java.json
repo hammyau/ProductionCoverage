@@ -1,0 +1,26 @@
+{
+  "name": "doc/table/TableTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/table/TableTest.java",
+      "docsin": [
+        "TestSpreadsheetTable.ods",
+        "TestTextTable.odt",
+        "CreateTableCase.odt",
+        "testGetCellAt.ods",
+        "TestHeaderFooter.odt"
+      ],
+      "docsout": [
+        "TestTextTableOut.odt",
+        "TestTextTableOutput.odt",
+        "TestSetGetWidth.odt",
+        "TestGetSetName.odt",
+        "tableProtected.odt",
+        "TestGetColumnList.odt",
+        "TestGetRowList.odt",
+        "TestSpreadsheetTableOutput.ods"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "doc/UnknownPropertiesTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/UnknownPropertiesTest.java",
+      "docsin": [
+        "unknown_properties.odt"
+      ],
+      "docsout": [
+        "unknown_properties_saved.odt"
+      ]
+    }
+  ]
+}

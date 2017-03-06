@@ -1,0 +1,13 @@
+{
+  "name": "doc/ListTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/ListTest.java",
+      "docsin": [
+        "list.odt"
+      ],
+      "docsout": []
+    }
+  ]
+}

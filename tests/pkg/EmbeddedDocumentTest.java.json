@@ -1,0 +1,20 @@
+{
+  "name": "pkg/EmbeddedDocumentTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/EmbeddedDocumentTest.java",
+      "docsin": [
+        "performance/Presentation1_INVALID.odp"
+      ],
+      "docsout": [
+        "SaveEmbeddedDoc.odt",
+        "SaveEmbeddedDocSideBySide.odt",
+        "SaveEmbeddedDocIncluded.odt",
+        "RemoveEmbeddedDoc.odt",
+        "TestModifiedEmbeddedDoc.odt",
+        "SaveModifiedEmbeddedDocAlone.odt"
+      ]
+    }
+  ]
+}

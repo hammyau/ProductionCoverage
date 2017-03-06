@@ -1,0 +1,16 @@
+{
+  "name": "incubator/meta/MetaDocumentStatisticTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "incubator/meta/MetaDocumentStatisticTest.java",
+      "docsin": [
+        "TBD"
+      ],
+      "docsout": [
+        "XPathTest-ForeignPrefix-output.odp",
+        "XPathTest-ForeignPrefix2-output.odp"
+      ]
+    }
+  ]
+}

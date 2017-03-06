@@ -1,0 +1,12 @@
+{
+  "name": "doc/FrameTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/FrameTest.java",
+      "docsin": [
+        "frame.odt"
+      ]
+    }
+  ]
+}

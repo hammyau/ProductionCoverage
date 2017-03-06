@@ -1,0 +1,10 @@
+{
+  "name": "type/DataTypeTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "type/DataTypeTest.java",
+      "docsin": []
+    }
+  ]
+}

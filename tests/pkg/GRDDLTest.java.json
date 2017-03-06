@@ -1,0 +1,12 @@
+{
+  "name": "pkg/GRDDLTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/GRDDLTest.java",
+      "docsin": [
+        "test_rdfmeta.odt"
+      ]
+    }
+  ]
+}

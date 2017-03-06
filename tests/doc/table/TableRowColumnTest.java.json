@@ -1,0 +1,19 @@
+{
+  "name": "doc/table/TableRowColumnTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/table/TableRowColumnTest.java",
+      "docsin": [
+        "TestSpreadsheetTable.ods",
+        "TestTextTable.odt"
+      ],
+      "docsout": [
+        "TestSpreadsheetTableOutput.ods",
+        "TestTextTableChangeSize.odt",
+        "TestTextTableSplitRepeatedColumns.odt",
+        "TestTextTableChangeIndex.odt"
+      ]
+    }
+  ]
+}

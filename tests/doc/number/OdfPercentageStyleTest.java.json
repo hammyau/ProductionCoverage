@@ -1,0 +1,12 @@
+{
+  "name": "doc/number/OdfPercentageStyleTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/number/OdfPercentageStyleTest.java",
+      "docsin": [
+        "TBD"
+      ]
+    }
+  ]
+}

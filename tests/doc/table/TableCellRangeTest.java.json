@@ -1,0 +1,24 @@
+{
+  "name": "doc/table/TableCellRangeTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/table/TableCellRangeTest.java",
+      "docsin": [
+        "TestSpreadsheetTable.ods",
+        "TestTextTable.odt"
+      ],
+      "docsout": [
+        "TestTextTableMergeCoveredCell.odt",
+        "TestTextTableMergeTwoCell.odt",
+        "TestTextTableMergeTwoCell2.odt",
+        "TestTextTableMergeTable.odt",
+        "TestTextTableMergeFirstTwoColumn.odt",
+        "TestTextTableMergeFirstTwoRow",
+        "TestSpreadsheetTableCellRangeName.ods",
+        "TestSpreadsheetTableMergeExpandCell.ods",
+        "TestTextTableMergeTextExpandCell.odt"
+      ]
+    }
+  ]
+}

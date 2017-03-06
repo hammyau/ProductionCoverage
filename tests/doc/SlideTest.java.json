@@ -1,0 +1,27 @@
+{
+  "name": "doc/SlideTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/SlideTest.java",
+      "docsin": [
+        "Presentation1.odp",
+        "Presentation2.odp",
+        "SlideTest1.odp",
+        "SlideTest2.odp",
+        "SlideTest3.odp"
+      ],
+      "docsout": [
+        "SlideResultSlideName.odp",
+        "SlideResultDelete.odp",
+        "SlideResultDelete2.odp",
+        "SlideResultNew.odp",
+        "SlideResultMoveAndCopy.odp",
+        "SlideResultCopyForeignSlide2.odp",
+        "SlideResultMerge2.odp",
+        "SlideResultMerge1.odp",
+        "SlideResultCopyThreeDoc.odp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "pkg/LoadSaveErrorTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "pkg/LoadSaveErrorTest.java",
+      "docsin": [
+        "OdfTextDocument.odt"
+      ]
+    }
+  ]
+}

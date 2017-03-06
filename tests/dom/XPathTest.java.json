@@ -1,0 +1,14 @@
+{
+  "name": "dom/XPathTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "dom/XPathTest.java",
+      "docsin": [
+        "XPathTest-foreignPrefix.odp",
+        "XPathTest-foreignPrefix2.odp",
+        "XPathTest-duplicate-prefix.odt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "doc/number/OdfCurrencyStyleTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/number/OdfCurrencyStyleTest.java",
+      "docsin": [
+        "TBD"
+      ]
+    }
+  ]
+}

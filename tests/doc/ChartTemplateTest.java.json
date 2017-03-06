@@ -1,0 +1,15 @@
+{
+  "name": "doc/ChartTemplateTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/ChartTemplateTest.java",
+      "docsin": [
+        "chartTestTemplate.otc"
+      ],
+      "docsout": [
+        "chartTestTemplate.otc"
+      ]
+    }
+  ]
+}

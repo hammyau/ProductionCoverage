@@ -1,0 +1,15 @@
+{
+  "name": "doc/SpreadsheetTemplateTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/SpreadsheetTemplateTest.java",
+      "docsin": [
+        "spreadsheetTestTemplate.ots"
+      ],
+      "docsout": [
+        "odfdom-test.ots"
+      ]
+    }
+  ]
+}

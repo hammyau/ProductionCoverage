@@ -1,0 +1,15 @@
+{
+  "name": "doc/TextTemplateTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/TextTemplateTest.java",
+      "docsin": [
+        "textTestTemplate.ott"
+      ],
+      "docsout": [
+        "odfdom-test.ott"
+      ]
+    }
+  ]
+}

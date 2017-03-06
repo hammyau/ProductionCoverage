@@ -1,0 +1,20 @@
+{
+  "name": "doc/DocumentTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/DocumentTest.java",
+      "docsin": [
+        "invalid.ods",
+        "test2.odt",
+        "no_size_opt.odt",
+        "testDefaultLanguage.odp"
+      ],
+      "docsout": [
+        "list-out.odt",
+        "InvalidUnderlineAttribute.odt",
+        "saving-is-possible.odt"
+      ]
+    }
+  ]
+}
