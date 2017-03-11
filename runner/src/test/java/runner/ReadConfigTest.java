@@ -10,13 +10,25 @@ import org.junit.Test;
 public class ReadConfigTest {
 
 	@Test
-	public void test() throws FileNotFoundException, IOException {
+	public void storeTests() throws FileNotFoundException, IOException {
 		ProductionComparison pc = new ProductionComparison();
-		pc.readProperties("prodComp.properties");
 		assert(pc.isODFEDirSet());
 		assert(pc.isODFToolkitDirSet());
-		pc.run();
-		assert(pc.numTests() > 0);
+		
+		pc.moveTestsToStore();
+		//pc.run();
+		assert(pc.getNumberOfOriginalTests() == 0 && pc.getNumberOfStoredTests() > 0);
+	}
+
+	@Test
+	public void restoreTests() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.restoreTests();
+		//pc.run();
+		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
 	}
 
 }

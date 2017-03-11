@@ -11,8 +11,8 @@ public class ReadProdCompTest {
 	@Test
 	public void test() {
 		ProdCompTest pct = new ProdCompTest();
-		pct.intFromJSON(new File("blah"));
-		assert(pct.hasElements());
+		pct.intFromJSON(new File("../tests/doc/DocumentCreationTest.java.json"));
+		assert(pct.hasIncrements());
 	}
 
 }

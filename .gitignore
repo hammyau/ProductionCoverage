@@ -3,3 +3,5 @@ results/*
 *.csv
 results.json
 testStore
+/git-bash.lnk
+/incMaker.js
