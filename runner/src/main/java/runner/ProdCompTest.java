@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Map;
 
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParseException;
@@ -27,9 +28,11 @@ public class ProdCompTest implements FileVisitor {
 	private JsonFactory jFactory;
 	private ObjectMapper mapper;
 	
-	private Path odfToolkitBase;
+	private Path odfToolkitTestBase;
 	private Path odfeBase;
 	private Path testStore;
+	private Path odfProjectBase;
+	private Path testClassesBase;
 
 	public ProdCompTest(Path testsRoot) {
 		jFactory = new JsonFactory();
@@ -61,17 +64,35 @@ public class ProdCompTest implements FileVisitor {
 	public void run() {
 		System.out.println("Run Test " + rootNode.findValue("name"));
 		Path source = testStore.resolve(rootNode.findValue("name").asText());
-		Path target = odfToolkitBase.resolve(rootNode.findValue("name").asText());
+		Path target = odfToolkitTestBase.resolve(rootNode.findValue("name").asText());
 		try {
 			Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+			runMavenTest();
+			Files.move(target, source, StandardCopyOption.REPLACE_EXISTING);
+			String className = rootNode.findValue("name").asText().replace(".java", ".class");
+			Path targetClass = testClassesBase.resolve(className);
+			Files.delete(targetClass);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}
 	}
 
-	public void setODFBase(Path originalTestsPath) {
-		odfToolkitBase = originalTestsPath;
+	private void runMavenTest() {
+		CommandRunner runner = new CommandRunner();
+		String command = "mvn.cmd cobertura:cobertura";
+		try {
+			runner.run(command, odfProjectBase.toFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println(runner.getCmdOutput());
+	}
+
+	public void setODFTestsBase(Path originalTestsPath) {
+		odfToolkitTestBase = originalTestsPath;
 	}
 
 	public FileVisitResult preVisitDirectory(Object dir, BasicFileAttributes attrs) throws IOException {
@@ -94,5 +115,13 @@ public class ProdCompTest implements FileVisitor {
 
 	public void setTestStore(Path ts) {
 		testStore = ts;
+	}
+
+	public void setODFProjectBase(Path projectBase) {
+		odfProjectBase = projectBase;
+	}
+
+	public void setTestClassesBase(Path originalTestClasses) {
+		testClassesBase = originalTestClasses;	
 	}
 }

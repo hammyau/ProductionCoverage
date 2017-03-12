@@ -25,8 +25,12 @@ import java.util.logging.Logger;
 
 public class ProductionComparison {
 	
-	private static final String ODFTOOLKIT_PROJECT = "odftoolkitProject";
-	private static final String ODFE_PROJECT = "odfeProject";
+	private static final String ODFTOOLKIT_BASE = "odftoolkitBase";
+	private static final String ODF_URI = "odfURI";
+	private static final String ODFPROJECT = "odfProject";
+	private static final String MAVEN_TESTBASE = "src/test/java/";
+	private static final String MAVEN_TESTCLASSES = "target/test-classes/";
+	private static final String ODFE_BASE = "odfeBase";
 	private static final String USER_DIR = "user.dir";
 	private Properties props;
 	private final static   Logger LOGGER = Logger.getLogger(ProductionComparison.class.getName());
@@ -34,7 +38,9 @@ public class ProductionComparison {
 	private List<File> tests = new ArrayList<File>();
 	private String runDir;
 	private Path originalTestsPath;
+	private Path odfProjectBase;
 	private Path testStore;
+	private Path originalTestClasses;
 	
 	ProductionComparison() throws FileNotFoundException, IOException {
 		readProperties("prodComp.properties");
@@ -44,8 +50,8 @@ public class ProductionComparison {
 	
 	public void run() {
 		System.out.println("Production Comparison");
-		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_PROJECT));
-		System.out.println("ODFE @ " + props.getProperty(ODFE_PROJECT));
+		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
+		System.out.println("ODFE @ " + props.getProperty(ODFE_BASE));
 		
 		moveTestsToStore();	
 		runTests();
@@ -77,10 +83,12 @@ public class ProductionComparison {
 	}
 
 	private void setTestPaths() {
-		originalTestsPath = Paths.get(props.getProperty(ODFTOOLKIT_PROJECT), "src/test/java/org/odftoolkit/odfdom");		
+		originalTestsPath = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTBASE, props.getProperty(ODF_URI), props.getProperty(ODFPROJECT));		
+		originalTestClasses = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTCLASSES, props.getProperty(ODF_URI), props.getProperty(ODFPROJECT));		
 		testStore = Paths.get(System.getProperty(USER_DIR), "../testStore");
 		originalTestsPath = originalTestsPath.toAbsolutePath();
 		testStore = testStore.normalize();
+		odfProjectBase = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT));
 	}
 
 	public void restoreTests() {
@@ -105,8 +113,10 @@ public class ProductionComparison {
 		testsRoot = testsRoot.normalize();
 		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
         ProdCompTest pct = new ProdCompTest(testsRoot);
-        pct.setODFBase(originalTestsPath);
+        pct.setODFProjectBase(odfProjectBase);
+        pct.setODFTestsBase(originalTestsPath);
         pct.setTestStore(testStore);		
+        pct.setTestClassesBase(originalTestClasses);
 		try {
 	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
 		} catch (IOException e) {
@@ -145,11 +155,11 @@ public class ProductionComparison {
 	}
 
 	public boolean isODFToolkitDirSet() {
-		return props.getProperty(ODFTOOLKIT_PROJECT) != null;
+		return props.getProperty(ODFTOOLKIT_BASE) != null;
 	}
 	
 	public boolean isODFEDirSet() {
-		return props.getProperty(ODFE_PROJECT) != null;
+		return props.getProperty(ODFE_BASE) != null;
 	}
 
 	public boolean haveResults() {
