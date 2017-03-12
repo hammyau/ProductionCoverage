@@ -3,10 +3,13 @@ package runner;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.CopyOption;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.BasicFileAttributes;
 
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParseException;
@@ -18,7 +21,7 @@ import org.codehaus.jackson.node.ObjectNode;
 
 // We can make this a File Visitor and manage it that way
 // Looks much better.
-public class ProdCompTest {
+public class ProdCompTest implements FileVisitor {
 	
 	private ObjectNode rootNode;
 	private JsonFactory jFactory;
@@ -26,17 +29,18 @@ public class ProdCompTest {
 	
 	private Path odfToolkitBase;
 	private Path odfeBase;
+	private Path testStore;
 
-	public ProdCompTest() {
+	public ProdCompTest(Path testsRoot) {
 		jFactory = new JsonFactory();
 		mapper = new ObjectMapper();
 	}
 	
-	public void intFromJSON(File testName) {
-		if(testName.exists()) {
+	public void intFromJSON(Path test) {
+		if(Files.exists(test)) {
 			JsonParser jParser;
 			try {
-				jParser = jFactory.createJsonParser(testName);
+				jParser = jFactory.createJsonParser(test.toFile());
 				jParser.setCodec(mapper);
 				rootNode = (ObjectNode) jParser.readValueAsTree();
 			} catch (JsonParseException e) {
@@ -56,7 +60,7 @@ public class ProdCompTest {
 
 	public void run() {
 		System.out.println("Run Test " + rootNode.findValue("name"));
-		Path source = Paths.get("TestStore/" + rootNode.findValue("name").asText());
+		Path source = testStore.resolve(rootNode.findValue("name").asText());
 		Path target = odfToolkitBase.resolve(rootNode.findValue("name").asText());
 		try {
 			Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
@@ -66,7 +70,29 @@ public class ProdCompTest {
 		}	
 	}
 
-	public void setODFBase(String property) {
-		odfToolkitBase = Paths.get(property);
+	public void setODFBase(Path originalTestsPath) {
+		odfToolkitBase = originalTestsPath;
+	}
+
+	public FileVisitResult preVisitDirectory(Object dir, BasicFileAttributes attrs) throws IOException {
+		return FileVisitResult.CONTINUE;
+	}
+
+	public FileVisitResult visitFileFailed(Object file, IOException exc) throws IOException {
+		return FileVisitResult.CONTINUE;
+	}
+
+	public FileVisitResult postVisitDirectory(Object dir, IOException exc) throws IOException {
+		return FileVisitResult.CONTINUE;
+	}
+
+	public FileVisitResult visitFile(Object file, BasicFileAttributes attrs) throws IOException {
+		intFromJSON((Path)file);
+		run();
+		return FileVisitResult.CONTINUE;
+	}
+
+	public void setTestStore(Path ts) {
+		testStore = ts;
 	}
 }

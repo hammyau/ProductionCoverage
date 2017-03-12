@@ -47,9 +47,7 @@ public class ProductionComparison {
 		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_PROJECT));
 		System.out.println("ODFE @ " + props.getProperty(ODFE_PROJECT));
 		
-		moveTestsToStore();
-		
-		findTests();
+		moveTestsToStore();	
 		runTests();
 	}
 	
@@ -102,23 +100,25 @@ public class ProductionComparison {
 	}
 
 	private void runTests() {
-		for(File test : tests) {
-			ProdCompTest pct = new ProdCompTest();
-			pct.setODFBase(props.getProperty(ODFTOOLKIT_PROJECT));
-			pct.intFromJSON(test);
-			pct.run();
+		//Change this to a tree walking thing
+		Path testsRoot = Paths.get(runDir + "/../tests");
+		testsRoot = testsRoot.normalize();
+		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+        ProdCompTest pct = new ProdCompTest(testsRoot);
+        pct.setODFBase(originalTestsPath);
+        pct.setTestStore(testStore);		
+		try {
+	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	public int numTests() {
 		return tests.size();
 	}
-	
-	private void findTests() {
-		System.out.println("Tests:");
-		addtestsFrom(new File(runDir + "/../tests"));
-	}
-	
+		
 	public void addtestsFrom(File node){
 		if(node.isDirectory()) {
 			String[] subNote = node.list();
@@ -153,7 +153,6 @@ public class ProductionComparison {
 	}
 
 	public boolean haveResults() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

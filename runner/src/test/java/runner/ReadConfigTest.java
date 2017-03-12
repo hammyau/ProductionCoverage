@@ -31,4 +31,14 @@ public class ReadConfigTest {
 		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
 	}
 
+	@Test
+	public void runTests() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.run();
+		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
+	}
+
 }
