@@ -33,6 +33,8 @@ public class ProdCompTest implements FileVisitor {
 	private Path testStore;
 	private Path odfProjectBase;
 	private Path testClassesBase;
+	private Path coverageSite;
+	private Path resultsPath;
 
 	public ProdCompTest(Path testsRoot) {
 		jFactory = new JsonFactory();
@@ -62,16 +64,31 @@ public class ProdCompTest implements FileVisitor {
 	}
 
 	public void run() {
-		System.out.println("Run Test " + rootNode.findValue("name"));
-		Path source = testStore.resolve(rootNode.findValue("name").asText());
-		Path target = odfToolkitTestBase.resolve(rootNode.findValue("name").asText());
+		String testName = rootNode.findValue("name").asText();
+		System.out.println("Run Test " + testName);
+		Path source = testStore.resolve(testName);
+		Path target = odfToolkitTestBase.resolve(testName);
 		try {
 			Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
 			runMavenTest();
 			Files.move(target, source, StandardCopyOption.REPLACE_EXISTING);
-			String className = rootNode.findValue("name").asText().replace(".java", ".class");
+			String className = testName.replace(".java", ".class");
 			Path targetClass = testClassesBase.resolve(className);
 			Files.delete(targetClass);
+			
+			//once we get the coverage results
+			//what do we do with them?
+			// write then to a json results file in the results directory
+			// current has the raw coveage numbers too
+			
+			//Probably best to have the test results as a list of results values
+			//easier to iterate and write to JSON - or have it create JSON nodes already?
+			CoberturaStats cs = new CoberturaStats();
+			cs.setSite(coverageSite);
+			JSONTestCoverage jsonCov = new JSONTestCoverage(testName);
+			jsonCov.open(resultsPath);
+			jsonCov.add(cs.getResults());
+			jsonCov.writeToFile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,4 +141,14 @@ public class ProdCompTest implements FileVisitor {
 	public void setTestClassesBase(Path originalTestClasses) {
 		testClassesBase = originalTestClasses;	
 	}
+	
+	public void setCoverageSite(Path site) {
+		coverageSite = site;
+	}
+
+	public void setResultsPath(Path p) {
+		resultsPath = p;
+	}
 }
+
+

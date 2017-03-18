@@ -30,6 +30,7 @@ public class ProductionComparison {
 	private static final String ODFPROJECT = "odfProject";
 	private static final String MAVEN_TESTBASE = "src/test/java/";
 	private static final String MAVEN_TESTCLASSES = "target/test-classes/";
+	private static final String MAVEN_COVERAGE_SITE = "target/site/cobertura/";
 	private static final String ODFE_BASE = "odfeBase";
 	private static final String USER_DIR = "user.dir";
 	private Properties props;
@@ -41,6 +42,8 @@ public class ProductionComparison {
 	private Path odfProjectBase;
 	private Path testStore;
 	private Path originalTestClasses;
+	private Path coveragePath;
+	private Path resultsPath;
 	
 	ProductionComparison() throws FileNotFoundException, IOException {
 		readProperties("prodComp.properties");
@@ -84,8 +87,12 @@ public class ProductionComparison {
 
 	private void setTestPaths() {
 		originalTestsPath = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTBASE, props.getProperty(ODF_URI), props.getProperty(ODFPROJECT));		
-		originalTestClasses = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTCLASSES, props.getProperty(ODF_URI), props.getProperty(ODFPROJECT));		
+		originalTestClasses = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTCLASSES, props.getProperty(ODF_URI), props.getProperty(ODFPROJECT));
+		
+		coveragePath = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_COVERAGE_SITE);
+
 		testStore = Paths.get(System.getProperty(USER_DIR), "../testStore");
+		resultsPath = Paths.get(System.getProperty(USER_DIR), "../results").normalize();
 		originalTestsPath = originalTestsPath.toAbsolutePath();
 		testStore = testStore.normalize();
 		odfProjectBase = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT));
@@ -117,6 +124,8 @@ public class ProductionComparison {
         pct.setODFTestsBase(originalTestsPath);
         pct.setTestStore(testStore);		
         pct.setTestClassesBase(originalTestClasses);
+        pct.setCoverageSite(coveragePath);
+        pct.setResultsPath(resultsPath);
 		try {
 	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
 		} catch (IOException e) {
