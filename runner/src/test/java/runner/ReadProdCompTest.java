@@ -18,4 +18,13 @@ public class ReadProdCompTest {
 		assert(pct.hasIncrements());
 	}
 
+	@Test
+	public void test2() {
+		Path p = Paths.get("../tests/doc/ChartTemplateTest.java.json");
+		ProdCompTest pct = new ProdCompTest(p);
+		pct.intFromJSON(p);
+		assert(pct.hasIncrements());
+		pct.run();
+	}
+
 }

@@ -44,6 +44,8 @@ public class ProductionComparison {
 	private Path originalTestClasses;
 	private Path coveragePath;
 	private Path resultsPath;
+	private Path odfExplorerBase;
+	private Path odfExplorerDocuments;
 	
 	ProductionComparison() throws FileNotFoundException, IOException {
 		readProperties("prodComp.properties");
@@ -58,6 +60,35 @@ public class ProductionComparison {
 		
 		moveTestsToStore();	
 		runTests();
+	}
+	
+	public void runSingleTest(String name) {
+		System.out.println("Production Comparison");
+		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
+		System.out.println("ODFE @ " + props.getProperty(ODFE_BASE));
+		
+		moveTestsToStore();	
+		//Change this to a tree walking thing
+		Path testsRoot = Paths.get(runDir + "/../tests");
+		testsRoot = testsRoot.normalize();
+		
+		Path p = Paths.get(name);
+		ProdCompTest pct = new ProdCompTest(p);
+		pct.intFromJSON(p);
+        pct.setODFProjectBase(odfProjectBase);
+        pct.setODFTestsBase(originalTestsPath);
+        pct.setTestStore(testStore);		
+        pct.setTestClassesBase(originalTestClasses);
+        pct.setCoverageSite(coveragePath);
+        pct.setResultsPath(resultsPath);
+        
+        //need to clean out the old aggregations first
+        pct.setODFExplorerBase(odfExplorerBase);
+        pct.setODFExplorerDocuments(odfExplorerDocuments);
+        
+        pct.run();
+        
+        
 	}
 	
 	public void moveTestsToStore() {
@@ -96,7 +127,10 @@ public class ProductionComparison {
 		originalTestsPath = originalTestsPath.toAbsolutePath();
 		testStore = testStore.normalize();
 		odfProjectBase = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT));
-	}
+
+		odfExplorerBase = Paths.get(props.getProperty(ODFE_BASE));
+		odfExplorerDocuments = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_TESTCLASSES);
+    }
 
 	public void restoreTests() {
         moveTests(testStore, originalTestsPath);	
@@ -126,6 +160,10 @@ public class ProductionComparison {
         pct.setTestClassesBase(originalTestClasses);
         pct.setCoverageSite(coveragePath);
         pct.setResultsPath(resultsPath);
+        
+        //need to clean out the old aggregations first
+        pct.setODFExplorerBase(odfExplorerBase);
+        pct.setODFExplorerDocuments(odfExplorerDocuments);
 		try {
 	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
 		} catch (IOException e) {
