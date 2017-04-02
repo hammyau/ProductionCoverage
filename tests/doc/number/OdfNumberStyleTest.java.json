@@ -5,7 +5,6 @@
     {
       "test": "doc/number/OdfNumberStyleTest.java",
       "docsin": [
-        "TBD"
       ]
     }
   ]

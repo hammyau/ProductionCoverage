@@ -2,6 +2,7 @@ package runner;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.CopyOption;
@@ -41,6 +42,8 @@ public class ProdCompTest implements FileVisitor {
 	private Path resultsPath;
 	private Path odfExplorerBase;
 	private Path odfExplorerDocuments;
+	
+	private int testNum = 1;
 
 	public ProdCompTest(Path testsRoot) {
 		jFactory = new JsonFactory();
@@ -91,12 +94,16 @@ public class ProdCompTest implements FileVisitor {
 
 				CoberturaStats cs = new CoberturaStats();
 				cs.setSite(coverageSite);
-				JSONTestCoverage jsonCov = new JSONTestCoverage(testName);
+				testName = String.format("%02d_", testNum) + testName;
+				Path outFile = Paths.get(testName);
+				String NumTestName = String.format("%02d_", testNum) + outFile.getFileName().toString() + "_Covg.json";
+				JSONTestCoverage jsonCov = new JSONTestCoverage(NumTestName);
 				jsonCov.open(resultsPath);
 				jsonCov.add(cs.getResults());
 				jsonCov.writeToFile();
 
-				odfeEachDocument(testName);
+				odfeEachDocument(NumTestName);
+				testNum++;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

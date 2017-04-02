@@ -1,5 +1,7 @@
 package runner;
 
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -25,6 +27,7 @@ import java.util.logging.Logger;
 
 public class ProductionComparison {
 	
+	private static final String ODFE_RUNS_PATH = "public/app/records/Aggregations/prodcov";
 	private static final String ODFTOOLKIT_BASE = "odftoolkitBase";
 	private static final String ODF_URI = "odfURI";
 	private static final String ODFPROJECT = "odfProject";
@@ -46,6 +49,7 @@ public class ProductionComparison {
 	private Path resultsPath;
 	private Path odfExplorerBase;
 	private Path odfExplorerDocuments;
+	private ODFEResults odferesults;
 	
 	ProductionComparison() throws FileNotFoundException, IOException {
 		readProperties("prodComp.properties");
@@ -60,8 +64,34 @@ public class ProductionComparison {
 		
 		moveTestsToStore();	
 		runTests();
+		getODFEResults();
+		correlateTheResults();
 	}
 	
+	public void correlateTheResults() {
+		// walk the test tree again to build an incremental picture of coverage
+		// for both the code and production
+		System.out.println("Production Comparison Test Correlation");
+		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
+		System.out.println("ODFE @ " + props.getProperty(ODFE_BASE));
+		
+		
+		Path testsRoot = Paths.get(runDir + "/../tests");
+		testsRoot = testsRoot.normalize();
+		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+        ProdCompTestCorrelator pctc = new ProdCompTestCorrelator(testsRoot);
+        pctc.setResultsPath(resultsPath);
+        pctc.setODFEResults(odferesults);
+		try {
+	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pctc);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	public void runSingleTest(String name) {
 		System.out.println("Production Comparison");
 		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
@@ -149,7 +179,6 @@ public class ProductionComparison {
 	}
 
 	private void runTests() {
-		//Change this to a tree walking thing
 		Path testsRoot = Paths.get(runDir + "/../tests");
 		testsRoot = testsRoot.normalize();
 		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
@@ -212,4 +241,14 @@ public class ProductionComparison {
 	public boolean haveResults() {
 		return false;
 	}
-}
+
+	public void getODFEResults() {
+		String odfedir = props.getProperty(ODFE_BASE);
+		odferesults = new ODFEResults();
+		Path runsPath = Paths.get(odfedir + ODFE_RUNS_PATH);
+		odferesults.setRunsPath(runsPath);
+		odferesults.setResultsOUtputPath(resultsPath.resolve("testPCCov.json"));
+		odferesults.getStats();
+		odferesults.write();
+	}}
+

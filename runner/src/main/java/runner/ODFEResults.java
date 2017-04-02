@@ -17,7 +17,7 @@ import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 
-public class ODFEresults {
+public class ODFEResults {
 
 	private Path resultsPath;
 	private Path runsPath;
@@ -26,18 +26,19 @@ public class ODFEresults {
 	private ObjectNode gaugesRoot;
 	private ObjectNode resultsRoot;
 	private int numRuns;
-	private Path lastRunPath;
-	private ArrayNode summaryNode;
 	private JsonGenerator generator;
+	private ArrayNode resultRunsArray;
+	private ObjectNode runObject;
+	private int runNumber;
 
-	public ODFEresults() {
+	public ODFEResults() {
 		
 		jFactory = new JsonFactory();
 		mapper = new ObjectMapper();
+		runNumber = 0;
 	}
 
 	public String getString() {
-		String results = "";
 		return resultsPath.toString();
 	}
 	
@@ -57,6 +58,7 @@ public class ODFEresults {
 			generator.useDefaultPrettyPrinter();
 
 			resultsRoot = mapper.createObjectNode();
+			resultRunsArray = resultsRoot.putArray("runs");
 			
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
@@ -66,7 +68,7 @@ public class ODFEresults {
 		} 
 	}
 	
-	public void read() {
+/*	public void read() {
 		if(runsPath.toFile().exists())	{
 			JsonParser jParser;
 			try {
@@ -76,7 +78,7 @@ public class ODFEresults {
 				if(rootNode != null) {
 					ArrayNode runsArray = (ArrayNode) rootNode.get("runs");
 					numRuns = runsArray.size();
-					JsonNode lastRunNode = runsArray.get(20);
+					JsonNode lastRunNode = runsArray.get(numRuns - 1);
 					lastRunPath = runsPath.resolve(lastRunNode.get("extract").asText());
 				}
 			} catch (JsonParseException e) {
@@ -87,9 +89,9 @@ public class ODFEresults {
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 
-	public void getStatsOfLastRun() {
+/*	public void getStatsOfLastRun() {
 		if(runsPath.toFile().exists())	{
 			JsonParser jParser;
 			try {
@@ -107,20 +109,21 @@ public class ODFEresults {
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 	
-	public void processSummary() {
+	public void processSummary(ObjectNode gaugesRoot) {
 		//want to build up an output JSON file
 		//for the moment 
-		resultsRoot.put("test", gaugesRoot.get("document"));
-		ArrayNode dataArray = resultsRoot.putArray("data");
+		ArrayNode summaryArray = (ArrayNode) gaugesRoot.get("summary");
+		runObject.put("testDoc", gaugesRoot.get("document"));
+		ArrayNode dataArray = runObject.putArray("data");
 	    float summaryHits = 0;
 	    float summaryElements = 0;
 	    float summaryAttrHits = 0;
 	    float summaryAttrElements = 0;
 	
-		for(int i=0; i< summaryNode.size(); i++) {
-			JsonNode ns = summaryNode.get(i);
+		for(int i=0; i< summaryArray.size(); i++) {
+			JsonNode ns = summaryArray.get(i);
 			ObjectNode nsResult = dataArray.addObject();
 			nsResult.put("name", ns.get("ns"));
 			JsonNode elementsHit = ns.get("elementsHit");
@@ -163,6 +166,71 @@ public class ODFEresults {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void getStatsOfRun(JsonNode runNode) {
+		if(runsPath.toFile().exists())	{
+			JsonParser jParser;
+			try {
+				runObject = resultRunsArray.addObject();
+				runObject.put("run", runNode.get("extract").asText());
+				Path runPath = runsPath.resolve(runNode.get("extract").asText());
+				jParser = jFactory.createJsonParser(runPath.resolve("odfegauges.json").toFile());
+				jParser.setCodec(mapper);
+				gaugesRoot = (ObjectNode) jParser.readValueAsTree();
+				if(gaugesRoot != null){
+					processSummary(gaugesRoot);
+				}
+			} catch (JsonParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void getStats() {
+		if(runsPath.toFile().exists())	{
+			JsonParser jParser;
+			try {
+				jParser = jFactory.createJsonParser(runsPath.resolve("odferuns.json").toFile());
+				jParser.setCodec(mapper);
+				JsonNode rootNode =  jParser.readValueAsTree();
+				if(rootNode != null) {
+					ArrayNode runsArray = (ArrayNode) rootNode.get("runs");
+					getRunStats(runsArray);
+				}
+			} catch (JsonParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void getRunStats(ArrayNode runsArray) {
+		int numRuns = runsArray.size();
+		for(int r=0; r<numRuns; r++) {
+			getStatsOfRun(runsArray.get(r));
+		}
+	}
+
+	public JsonNode getIncrementFor(String docName) {
+		while(runNumber < resultRunsArray.size()) {
+			JsonNode runNode = resultRunsArray.get(runNumber);
+			if( runNode.get("testDoc").asText().equals(docName) ) {
+				System.out.println("Document Match for " + docName + " @ " + runNumber);
+				JsonNode dataArray = runNode.get("data");
+				return dataArray.get(dataArray.size() - 1); //Summary is last one
+			}			
+			runNumber++;
+		}
+		System.out.println("No Match for " + docName);
+		return null;
 	}
 
 }

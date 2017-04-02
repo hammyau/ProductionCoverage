@@ -5,8 +5,7 @@
     {
       "test": "pkg/PackageTest.java",
       "docsin": [
-        "test2.odt",
-        "SimpleFormula.odf"
+        "test2.odt"
       ],
       "docsout": [
         "imageCompressed.odp",

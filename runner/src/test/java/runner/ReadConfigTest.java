@@ -51,4 +51,36 @@ public class ReadConfigTest {
 		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
 	}
 
+	@Test
+	public void correlateTests() throws FileNotFoundException, IOException {
+		// We have the tests in the test directory
+		//	a test has the java test name
+		//  and zero or more associated documents
+		// The results directory has the code coverage results after each test
+		// and the production coverage details after each document was processed.
+		
+		// Build an incremental picture of coverage as the tests are performed
+		// this can be done for each namespace or as a summary
+		//	need a mapping of packages to namespaces
+		
+		// for each test
+		//	find the test result file
+		//		get the all packages data
+		//  determine the last document.
+		//  iterate through the production coverage date to get the correct data
+		//		maintain the iterator. And cross check to the test docs?
+		//	write the test increment data
+		
+		
+		
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.getODFEResults();
+		pc.correlateTheResults();
+		assert(pc.getNumberOfOriginalTests() > 0 );
+	}
+
+	
 }
