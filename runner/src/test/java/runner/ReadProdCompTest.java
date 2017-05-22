@@ -14,7 +14,7 @@ public class ReadProdCompTest {
 	public void test() {
 		Path p = Paths.get("../tests/doc/DocumentCreationTest.java.json");
 		ProdCompTest pct = new ProdCompTest(p);
-		pct.intFromJSON(p);
+		pct.intFromJSON();
 		assert(pct.hasIncrements());
 	}
 
@@ -22,7 +22,7 @@ public class ReadProdCompTest {
 	public void test2() {
 		Path p = Paths.get("../tests/doc/ChartTemplateTest.java.json");
 		ProdCompTest pct = new ProdCompTest(p);
-		pct.intFromJSON(p);
+		pct.intFromJSON();
 		assert(pct.hasIncrements());
 		pct.run();
 	}

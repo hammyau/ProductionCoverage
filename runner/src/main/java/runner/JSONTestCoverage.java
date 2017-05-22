@@ -87,7 +87,7 @@ public class JSONTestCoverage {
 
 	public void read(Path dir) {
 		Path outFile = Paths.get(testName);
-		Path testPath = dir.resolve(outFile.getFileName().toString() + "_Covg.json");
+		Path testPath = dir.resolve(outFile);
 		if(Files.exists(testPath)) {
 			JsonParser jParser;
 			try {

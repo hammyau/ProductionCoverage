@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 
 public class ProductionComparison {
 	
-	private static final String ODFE_RUNS_PATH = "public/app/records/Aggregations/prodcov";
+	private static final String ODFE_RUNS_PATH = "public/app/records/Aggregations";
 	private static final String ODFTOOLKIT_BASE = "odftoolkitBase";
 	private static final String ODF_URI = "odfURI";
 	private static final String ODFPROJECT = "odfProject";
@@ -68,6 +68,20 @@ public class ProductionComparison {
 		correlateTheResults();
 	}
 	
+	public void listTests() {
+		Path testsRoot = Paths.get(runDir + "/../tests", props.getProperty(ODFPROJECT));
+		testsRoot = testsRoot.normalize();
+		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+		ProdCompTestReporter pctr = new ProdCompTestReporter(testsRoot);
+		try {
+	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pctr);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		pctr.listTests();
+	}
+	
 	public void correlateTheResults() {
 		// walk the test tree again to build an incremental picture of coverage
 		// for both the code and production
@@ -75,20 +89,25 @@ public class ProductionComparison {
 		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
 		System.out.println("ODFE @ " + props.getProperty(ODFE_BASE));
 		
+		TestIncrements tis = new TestIncrements();
+		tis.createJSON(Paths.get(runDir + "/../increments/Summary.json").normalize());
 		
-		Path testsRoot = Paths.get(runDir + "/../tests");
+		Path testsRoot = Paths.get(runDir + "/../tests", props.getProperty(ODFPROJECT));
 		testsRoot = testsRoot.normalize();
 		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
         ProdCompTestCorrelator pctc = new ProdCompTestCorrelator(testsRoot);
         pctc.setResultsPath(resultsPath);
         pctc.setODFEResults(odferesults);
+        pctc.setTestIncrements(tis);
 		try {
 	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pctc);		
+			
+	        tis.write();
+			tis.toCSV();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 
 
@@ -96,33 +115,42 @@ public class ProductionComparison {
 		System.out.println("Production Comparison");
 		System.out.println("ODF Toolkit @ " + props.getProperty(ODFTOOLKIT_BASE));
 		System.out.println("ODFE @ " + props.getProperty(ODFE_BASE));
+		System.out.println("Project " + props.getProperty(ODFPROJECT));
 		
-		moveTestsToStore();	
+		//moveTestsToStore();	
 		//Change this to a tree walking thing
-		Path testsRoot = Paths.get(runDir + "/../tests");
+		Path testsRoot = Paths.get(runDir,"/../tests", props.getProperty(ODFPROJECT));
 		testsRoot = testsRoot.normalize();
 		
 		Path p = Paths.get(name);
 		ProdCompTest pct = new ProdCompTest(p);
-		pct.intFromJSON(p);
-        pct.setODFProjectBase(odfProjectBase);
-        pct.setODFTestsBase(originalTestsPath);
-        pct.setTestStore(testStore);		
-        pct.setTestClassesBase(originalTestClasses);
-        pct.setCoverageSite(coveragePath);
-        pct.setResultsPath(resultsPath);
-        
-        //need to clean out the old aggregations first
-        pct.setODFExplorerBase(odfExplorerBase);
-        pct.setODFExplorerDocuments(odfExplorerDocuments);
-        
+		pct.intFromJSON();
+        setupPCT(pct);      
         pct.run();
-        
-        
 	}
 	
 	public void moveTestsToStore() {
         moveTests(originalTestsPath, testStore);	
+	}
+	
+	public void deleteSite() {
+		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+		SiteDeleter tc = new SiteDeleter();
+		
+		try {
+	        Files.walkFileTree(coveragePath, opts, Integer.MAX_VALUE, tc);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void cleanMaven() {
+		Path testsRoot = Paths.get(runDir + "/../tests");
+		testsRoot = testsRoot.normalize();
+        ProdCompTest pct = new ProdCompTest(testsRoot);
+        pct.setODFProjectBase(odfProjectBase);
+        pct.cleanMaven();       
 	}
 	
 	public int getNumberOfOriginalTests() {
@@ -143,6 +171,7 @@ public class ProductionComparison {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		tc.reportTests();
 		return tc.getNumTests();		
 	}
 
@@ -152,8 +181,8 @@ public class ProductionComparison {
 		
 		coveragePath = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT), MAVEN_COVERAGE_SITE);
 
-		testStore = Paths.get(System.getProperty(USER_DIR), "../testStore");
-		resultsPath = Paths.get(System.getProperty(USER_DIR), "../results").normalize();
+		testStore = Paths.get(System.getProperty(USER_DIR), "../testStore", props.getProperty(ODFPROJECT));
+		resultsPath = Paths.get(System.getProperty(USER_DIR), "../results", props.getProperty(ODFPROJECT)).normalize();
 		originalTestsPath = originalTestsPath.toAbsolutePath();
 		testStore = testStore.normalize();
 		odfProjectBase = Paths.get(props.getProperty(ODFTOOLKIT_BASE), props.getProperty(ODFPROJECT));
@@ -179,11 +208,22 @@ public class ProductionComparison {
 	}
 
 	private void runTests() {
-		Path testsRoot = Paths.get(runDir + "/../tests");
+		Path testsRoot = Paths.get(runDir + "/../tests", props.getProperty(ODFPROJECT));
 		testsRoot = testsRoot.normalize();
 		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
         ProdCompTest pct = new ProdCompTest(testsRoot);
-        pct.setODFProjectBase(odfProjectBase);
+        setupPCT(pct);
+		try {
+	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+	private void setupPCT(ProdCompTest pct) {
+		pct.setODFProjectBase(odfProjectBase);
         pct.setODFTestsBase(originalTestsPath);
         pct.setTestStore(testStore);		
         pct.setTestClassesBase(originalTestClasses);
@@ -193,12 +233,7 @@ public class ProductionComparison {
         //need to clean out the old aggregations first
         pct.setODFExplorerBase(odfExplorerBase);
         pct.setODFExplorerDocuments(odfExplorerDocuments);
-		try {
-	        Files.walkFileTree(testsRoot, opts, Integer.MAX_VALUE, pct);		
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        pct.setProjectName(props.getProperty(ODFPROJECT));
 	}
 
 	public int numTests() {
@@ -245,10 +280,15 @@ public class ProductionComparison {
 	public void getODFEResults() {
 		String odfedir = props.getProperty(ODFE_BASE);
 		odferesults = new ODFEResults();
-		Path runsPath = Paths.get(odfedir + ODFE_RUNS_PATH);
+		Path runsPath = Paths.get(odfedir, ODFE_RUNS_PATH, props.getProperty(ODFPROJECT));
 		odferesults.setRunsPath(runsPath);
-		odferesults.setResultsOUtputPath(resultsPath.resolve("testPCCov.json"));
+		odferesults.setResultsOUtputPath(resultsPath.resolve(props.getProperty(ODFPROJECT) + "testPCCov.json"));
 		odferesults.getStats();
 		odferesults.write();
+	}
+
+
+	public void reportTests() {
+		getNumberOfStoredTests();
 	}}
 

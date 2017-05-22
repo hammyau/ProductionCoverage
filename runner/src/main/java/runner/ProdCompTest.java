@@ -17,10 +17,12 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.codehaus.jackson.JsonFactory;
+import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 
@@ -29,6 +31,8 @@ import org.codehaus.jackson.node.ObjectNode;
 // Looks much better.
 public class ProdCompTest implements FileVisitor {
 	
+	private static final String TEMP_TEMP = "temptemp/";
+
 	private ObjectNode rootNode;
 	private JsonFactory jFactory;
 	private ObjectMapper mapper;
@@ -44,17 +48,21 @@ public class ProdCompTest implements FileVisitor {
 	private Path odfExplorerDocuments;
 	
 	private int testNum = 1;
+	private String projectName;
+
+	private Path testFilePath;
 
 	public ProdCompTest(Path testsRoot) {
+		testFilePath = testsRoot;
 		jFactory = new JsonFactory();
 		mapper = new ObjectMapper();
 	}
 	
-	public void intFromJSON(Path test) {
-		if(Files.exists(test)) {
+	public void intFromJSON() {
+		if(Files.exists(testFilePath)) {
 			JsonParser jParser;
 			try {
-				jParser = jFactory.createJsonParser(test.toFile());
+				jParser = jFactory.createJsonParser(testFilePath.toFile());
 				jParser.setCodec(mapper);
 				rootNode = (ObjectNode) jParser.readValueAsTree();
 			} catch (JsonParseException e) {
@@ -72,44 +80,75 @@ public class ProdCompTest implements FileVisitor {
 
 	public void run() {
 		String testName = rootNode.findValue("name").asText();
-		//First see if there are any associated documents
+		System.out.println("Run Test " + testName);
+		Path source = testStore.resolve(testName);
+		Path target = odfToolkitTestBase.resolve(testName);
+		try {
+			mavenTheTest(testName, source, target);
+			String NumTestName = saveJSONCoverage(testName);
+
+			if (addDocsin() + addDocsout() > 0) {
+				odfeEachDocument(NumTestName);
+			} else {
+				System.out.println("There are no documents associated with test " + testName);
+			}
+			updateJSON();
+			testNum++;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private void mavenTheTest(String testName, Path source, Path target) throws IOException {
+		Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+		runMavenTest();
+		Files.move(target, source, StandardCopyOption.REPLACE_EXISTING);
+		String className = testName.replace(".java", ".class");
+		Path targetClass = testClassesBase.resolve(className);
+		Files.delete(targetClass);
+	}
+
+	private String saveJSONCoverage(String testName) {
+		CoberturaStats cs = new CoberturaStats();
+		cs.setSite(coverageSite);
+		testName = String.format("%02d_", testNum) + testName;
+		Path outFile = Paths.get(testName);
+		String NumTestName;
+		NumTestName = String.format("%02d_", testNum) + outFile.getFileName().toString() + "_Covg.json";
+		JSONTestCoverage jsonCov = new JSONTestCoverage(NumTestName);
+		jsonCov.open(resultsPath);
+		jsonCov.add(cs.getResults());
+		jsonCov.writeToFile();
+		return NumTestName;
+	}
+
+	private void updateJSON() throws IOException {
+		JsonGenerator generator = jFactory.createJsonGenerator(new FileWriter(testFilePath.toFile()));
+		mapper = new ObjectMapper();
+		mapper.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
+		generator.setCodec(mapper);
+		generator.useDefaultPrettyPrinter();
+		rootNode.put("testRan", true);
+		generator.writeTree(rootNode);
+		generator.close();
+		
+	}
+
+	private int addDocsin() {
 		ArrayNode docsin = (ArrayNode) rootNode.findValue("docsin");
-		int docCount = 0;
 		if(docsin != null)
-			docCount = docsin.size();
+			return docsin.size();
+		else
+		 return 0;
+	}
+
+	private int addDocsout() {
 		ArrayNode docsout = (ArrayNode) rootNode.findValue("docsout");
 		if(docsout != null)
-			docCount += docsout.size();
-		if (docCount > 0) {
-			System.out.println("Run Test " + testName);
-			Path source = testStore.resolve(testName);
-			Path target = odfToolkitTestBase.resolve(testName);
-			try {
-				Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
-				runMavenTest();
-				Files.move(target, source, StandardCopyOption.REPLACE_EXISTING);
-				String className = testName.replace(".java", ".class");
-				Path targetClass = testClassesBase.resolve(className);
-				Files.delete(targetClass);
-
-				CoberturaStats cs = new CoberturaStats();
-				cs.setSite(coverageSite);
-				testName = String.format("%02d_", testNum) + testName;
-				Path outFile = Paths.get(testName);
-				String NumTestName = String.format("%02d_", testNum) + outFile.getFileName().toString() + "_Covg.json";
-				JSONTestCoverage jsonCov = new JSONTestCoverage(NumTestName);
-				jsonCov.open(resultsPath);
-				jsonCov.add(cs.getResults());
-				jsonCov.writeToFile();
-
-				odfeEachDocument(NumTestName);
-				testNum++;
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} else {
-			System.out.println("There are no documents associated with test " + testName);			
-		}
+			return docsout.size();
+		else
+		 return 0;
 	}
 
 	private void runODFE(String testName, String args) {
@@ -143,11 +182,21 @@ public class ProdCompTest implements FileVisitor {
 		ArrayNode docsout = (ArrayNode) testIncrement.findValue("docsout");
 		if(docsout != null)
 			executeODFEforEachDocument(testName, docsout);
+		
+		ArrayNode tempdocsout = (ArrayNode) testIncrement.findValue("tempdocsout");
+		if(tempdocsout != null)
+			executeODFEforEachTempDocument(testName, tempdocsout);
+	}
+
+	private void executeODFEforEachTempDocument(String testName, ArrayNode tempdocsout) {
+		// the temp files are now written to a temp directory under test-classes
+		// for the moment let's just ignore them and manually run ODFE on them at the end
+		// to see if any additional coverage it added.
 	}
 
 	private void executeODFEforEachDocument(String testName, ArrayNode docsin) {
 		for(int i=0; i<docsin.size(); i++) {
-			String args = "java -jar odfe.jar -a -o prodcov -f ";
+			String args = "java -jar odfe.jar -a -o " + projectName + " -f ";
 			String documentName = docsin.get(i).asText();
 			Path docPAth = odfExplorerDocuments.resolve(documentName);
 			if(docPAth.toFile().exists()) {
@@ -163,6 +212,19 @@ public class ProdCompTest implements FileVisitor {
 	private void runMavenTest() {
 		CommandRunner runner = new CommandRunner();
 		String command = "mvn.cmd cobertura:cobertura";
+		try {
+			runner.run(command, odfProjectBase.toFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println(runner.getCmdOutput());
+	}
+
+	public void cleanMaven() {
+		CommandRunner runner = new CommandRunner();
+		String command = "mvn.cmd clean";
 		try {
 			runner.run(command, odfProjectBase.toFile());
 		} catch (IOException e) {
@@ -190,7 +252,8 @@ public class ProdCompTest implements FileVisitor {
 	}
 
 	public FileVisitResult visitFile(Object file, BasicFileAttributes attrs) throws IOException {
-		intFromJSON((Path)file);
+		testFilePath = (Path)file;
+		intFromJSON();
 		run();
 		return FileVisitResult.CONTINUE;
 	}
@@ -221,6 +284,10 @@ public class ProdCompTest implements FileVisitor {
 
 	public void setODFExplorerDocuments(Path docs) {
 		odfExplorerDocuments = docs;	
+	}
+
+	public void setProjectName(String project) {
+		projectName = project;		
 	}
 }
 

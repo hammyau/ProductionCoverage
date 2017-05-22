@@ -28,6 +28,7 @@ public class ProdCompTestCorrelator implements FileVisitor<Path> {
 	private ODFEResults odferesults;
 	
 	private int testNum = 1;
+	private TestIncrements tesIncrements;
 
 	public ProdCompTestCorrelator(Path testsRoot) {
 		jFactory = new JsonFactory();
@@ -56,17 +57,25 @@ public class ProdCompTestCorrelator implements FileVisitor<Path> {
 	}
 
 	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-		if (file.getFileName().toString().contains("Test")) {
+		if (file.getFileName().toString().endsWith(".json")) {
 			intFromJSON(file);
 			ArrayNode incrementValues = (ArrayNode) getCodeIncrement(file);
 			String docName = getLastDocumentName();
 			//Need to have an ODFEResult object in the background to iterate.
 			//May be able to pass in instead of open and read each time.
-			if(docName.length() > 0) {
-				JsonNode docData = odferesults.getIncrementFor(docName);
-				appendProductionCoverageData(incrementValues, docData);
+			if(incrementValues != null) {
+				tesIncrements.addTest(file.getFileName().toString(), incrementValues);
+				if (docName.length() > 0) {
+					JsonNode docData = odferesults.getIncrementFor(docName);
+					String runName = odferesults.getCurrentRunName();
+					appendProductionCoverageData(incrementValues, docData);
+					tesIncrements.setRunName(runName);
+					System.out.println(testNum + " " + file.getFileName().toString() + " " + incrementValues);
+				}
+				testNum++;
+			} else {
+				System.out.println(testNum + " no agg " + file.getFileName().toString() + " " + incrementValues);
 			}
-			System.out.println(incrementValues);
 		}
 		return FileVisitResult.CONTINUE;
 	}
@@ -97,7 +106,8 @@ public class ProdCompTestCorrelator implements FileVisitor<Path> {
 	private JsonNode getCodeIncrement(Path file) {
 		JsonNode incValues = null;
 		String testName = rootNode.findValue("name").asText();
-		String NumTestName = String.format("%02d_", testNum) + file.getFileName().toString();
+		Path outFile = Paths.get(testName);
+		String NumTestName = String.format("%02d_", testNum) + outFile.getFileName().toString() + "_Covg.json";
 		JSONTestCoverage jtc = new JSONTestCoverage(NumTestName);
 		jtc.read(resultsPath);
 		if(jtc.isReadAble()) {
@@ -126,6 +136,10 @@ public class ProdCompTestCorrelator implements FileVisitor<Path> {
 
 	public void setODFEResults(ODFEResults odfe) {
 		odferesults = odfe;
+	}
+
+	public void setTestIncrements(TestIncrements tis) {
+		tesIncrements = tis;	
 	}
 
 

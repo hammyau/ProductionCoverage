@@ -32,6 +32,26 @@ public class ReadConfigTest {
 	}
 
 	@Test
+	public void deleteSiteTests() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.deleteSite();
+		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
+	}
+
+	@Test
+	public void cleanMaven() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.cleanMaven();
+		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
+	}
+
+	@Test
 	public void runTests() throws FileNotFoundException, IOException {
 		ProductionComparison pc = new ProductionComparison();
 		assert(pc.isODFEDirSet());
@@ -47,7 +67,7 @@ public class ReadConfigTest {
 		assert(pc.isODFEDirSet());
 		assert(pc.isODFToolkitDirSet());
 		
-		pc.runSingleTest("../tests/doc/ImageTest.java.json");
+		pc.runSingleTest("../tests/simple/common/GetTextTest.java.json");
 		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
 	}
 
@@ -82,5 +102,18 @@ public class ReadConfigTest {
 		assert(pc.getNumberOfOriginalTests() > 0 );
 	}
 
+	//create a test to verify that all of the documents in the test-classes
+	//are used in a test.
 	
+	@Test
+	public void listTests() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		
+		pc.listTests();
+		pc.getNumberOfStoredTests();
+
+	}
+
 }

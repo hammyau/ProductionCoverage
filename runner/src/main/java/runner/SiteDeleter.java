@@ -10,51 +10,43 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.List;
 
-public class TestCounter implements FileVisitor<Path> {
-	private final Path target;
-	
-	private List<String> tests = new ArrayList<String>();
+public class SiteDeleter implements FileVisitor<Path> {
 
-	TestCounter(Path target) {
-		this.target = target;
+	SiteDeleter() {
 	}
-
 
 	public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
 		return FileVisitResult.CONTINUE;
 	}
 
 	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-		if (file.getFileName().toString().contains("Test")) {
-			tests.add(file.toString());
+		String fname = file.getFileName().toString();
+		if (fname.contains("html") || fname.contains("css") || fname.contains("png") || fname.contains("js")) {
+			try {
+				Files.delete(file);
+			} catch (IOException e) {
+				System.err.format("Unable to delete: %s%n", fname);
+			}
 		}
 		return FileVisitResult.CONTINUE;
 	}
 
 	public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
+		try {
+			Files.delete(dir);
+		} catch (IOException e) {
+			System.err.format("Unable to delete: %s%n", dir);
+		}
 		return FileVisitResult.CONTINUE;
 	}
 
 	public FileVisitResult visitFileFailed(Path file, IOException exc) {
 		if (exc instanceof FileSystemLoopException) {
 			System.err.println("cycle detected: " + file);
+		} else {
+			System.err.format("Unable to delete: %s: %s%n", file, exc);
 		}
 		return FileVisitResult.CONTINUE;
-	}
-
-
-	public int getNumTests() {
-		return tests.size();
-	}
-
-
-	public void reportTests() {
-		for(String t: tests) {
-			System.out.println(t);
-		}
-		
 	}
 }
