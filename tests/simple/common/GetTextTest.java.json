@@ -1,0 +1,10 @@
+{
+  "name" : "common/GetTextTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/GetTextTest.java",
+    "docsin" : [ "text-extract.odt" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

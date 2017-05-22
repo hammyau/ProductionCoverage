@@ -1,0 +1,13 @@
+{
+  "name" : "ChartTemplateTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "ChartTemplateTest.java",
+    "docsin" : [ "chartTestTemplate.otc" ],
+    "tempdocsout" : [ {
+      "name" : "simple-test",
+      "ext" : "otc"
+    } ]
+  } ],
+  "testRan" : true
+}

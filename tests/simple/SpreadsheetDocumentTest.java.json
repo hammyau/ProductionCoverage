@@ -1,0 +1,19 @@
+{
+  "name": "SpreadsheetDocumentTest.java", 
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "SpreadsheetDocumentTest.java",
+      "docsin": [ "spreadsheetTestTemplate.ots",
+      "ExcelDummyRowProblem_rows0.ods",
+      "ExcelDummyRowProblem_rows1.ods",
+      "TestSpreadsheetTable.ods"
+      ],
+      "docsout": [ ],
+      "tempdocsout": [
+      {"name": "Chart_spreadsheetTestTemplate.ods",
+       "ext": "tmp"}
+      ]
+    }
+  ]
+}

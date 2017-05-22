@@ -1,0 +1,14 @@
+{
+  "name": "SpreadsheetIteratorTest.java", 
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "SpreadsheetIteratorTest.java",
+      "docsin": [
+	      "SpreadsheetIteratorTest.ods"
+      ],
+      "docsout": [
+      ]
+    }
+  ]
+}	      

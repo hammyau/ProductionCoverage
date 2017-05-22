@@ -1,0 +1,10 @@
+{
+  "name" : "GraphicsTemplateTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "GraphicsTemplateTest.java",
+    "docsin" : [ "graphicTestTemplate.otg" ],
+    "docsout" : [ "simple-test.otg" ]
+  } ],
+  "testRan" : true
+}

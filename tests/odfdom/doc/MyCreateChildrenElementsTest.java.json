@@ -1,0 +1,15 @@
+{
+  "name": "doc/CreateChildrenElementsTest.java",
+  "project": "org/odftoolkit/odfdom/",
+  "increments": [
+    {
+      "test": "doc/CreateChildrenElementsTest.java",
+      "docsin": [
+        "presentation.odp",
+        "empty.odt"
+      ],
+      "docsout": [
+      ]
+    }
+  ]
+}

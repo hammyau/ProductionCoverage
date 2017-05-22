@@ -1,0 +1,14 @@
+{
+  "name": "DocumentTest.java", 
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "DocumentTest.java",
+      "docsin": [
+      ],
+      "docsout": [
+      ]
+    }
+  ]
+}	      
+

@@ -1,0 +1,13 @@
+{
+  "name": "common/WhitespaceProcessorTest.java",
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "common/WhitespaceProcessorTest.java",
+      "docsin": [
+      ],
+      "docsout": [
+      ]
+    }
+  ]
+}

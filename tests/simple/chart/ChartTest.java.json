@@ -1,0 +1,10 @@
+{
+  "name" : "chart/ChartTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "chart/ChartTest.java",
+    "docsin" : [ "SpreadsheetWithChart.ods", "TestCreateChartWithLocalData.ods", "ChartTest.ods" ],
+    "docsout" : [ "SpreadsheetWithAppendedChart.ods", "TestCreateChartWithCellRange.ods", "TestRemoveChart.ods", "TestODTChart.odt", "TestODPChart.odp" ]
+  } ],
+  "testRan" : true
+}

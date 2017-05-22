@@ -5,7 +5,6 @@
     {
       "test": "pkg/LoadSaveErrorTest.java",
       "docsin": [
-        "OdfTextDocument.odt"
       ]
     }
   ]

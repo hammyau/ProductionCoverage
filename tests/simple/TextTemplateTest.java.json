@@ -1,0 +1,18 @@
+{
+  "name": "TextTemplateTest.java", 
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "TextTemplateTest.java",
+      "docsin": ["textTestTemplate.ott"
+      ],
+      "docsout": [
+      ],
+      "tempdocsout": [
+      {"name": "simple-test",
+	   "ext": "ott"
+      }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "chart/ChartTypeTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "chart/ChartTypeTest.java",
+    "docsin" : [ "headerFooterHidden.odt" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,13 @@
+{
+  "name": "SpreadsheetWithoutTableCellPropertiesTest.java", 
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "SpreadsheetWithoutTableCellPropertiesTest.java",
+      "docsin": [
+      ],
+      "docsout": [
+      ]
+    }
+  ]
+}	   

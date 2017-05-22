@@ -1,0 +1,10 @@
+{
+  "name" : "LoadSaveTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "LoadSaveTest.java",
+    "docsin" : [ "not-only-odf.odt" ],
+    "docsout" : [ "loadsavetest.odt" ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,13 @@
+{
+  "name" : "PresentationTemplateTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "PresentationTemplateTest.java",
+    "docsin" : [ "presentationTestTemplate.otp" ],
+    "tempdocsout" : [ {
+      "name" : "simple-test",
+      "ext" : ".otp"
+    } ]
+  } ],
+  "testRan" : true
+}

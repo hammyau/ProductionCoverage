@@ -1,0 +1,10 @@
+{
+  "name" : "chart/DataSetTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "chart/DataSetTest.java",
+    "docsin" : [ "ChartTest.ods" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

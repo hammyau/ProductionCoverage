@@ -1,0 +1,10 @@
+{
+  "name" : "common/field/FieldsTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/field/FieldsTest.java",
+    "docsin" : [ "TextFieldSampleDocument.odt" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

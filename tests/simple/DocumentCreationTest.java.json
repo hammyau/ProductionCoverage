@@ -1,0 +1,31 @@
+{
+  "name": "DocumentCreationTest.java",
+  "project": "org/odftoolkit/simple/",
+  "increments": [
+    {
+      "test": "DocumentCreationTest.java",
+      "docsin": [
+        "testEmbeddedDoc.odt"
+      ],
+      "docsout": [
+ 	"TestAccess_EmbeddedDocument.odt",
+	"TestAccess_EmbeddedinEmbedded.odt",
+	"testSaveEmbeddedDoc.odt",
+	"TestSaveEmbeddedDoc_newName.odt",
+	"TestSaveEmbeddedDoc2.odt",
+	"TestSaveQueerEmbeddedPathDoc1.odt",
+	"CorruptedMimetypeDoc.odt",
+	"TestSaveCorruptedMimetypeDoc.odt",
+	"CorruptedMimetypeChart.odc",
+	"TestSaveCorruptedMimetypeChart.odc",
+        "TestEmpty_OdfTextDocument.odt",
+	"TestEmpty_OdfGraphicsDocument.odg",
+	"TestEmpty_OdfSpreadsheetDocument.ods",
+        "TestEmpty_OdfPresentationDocument.odp",
+	"TestEmpty_OdfChartDocument.odc",
+	"simple-wiki-package.odt",
+	"simple-wiki-dom.odt"
+      ]
+    }
+  ]
+}
