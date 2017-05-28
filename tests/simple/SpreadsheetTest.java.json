@@ -1,14 +1,10 @@
 {
-  "name": "SpreadsheetTest.java", 
-  "project": "org/odftoolkit/simple/",
-  "increments": [
-    {
-      "test": "SpreadsheetTest.java",
-      "docsin": ["TestSpreadsheetTable.ods"
-      ],
-      "docsout": ["Output_TestSpreadsheetTable.ods",
-      "Output2_TestSpreadsheetTable.ods"
-      ]
-    }
-  ]
+  "name" : "SpreadsheetTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "SpreadsheetTest.java",
+    "docsin" : [ "TestSpreadsheetTable.ods" ],
+    "docsout" : [ "Output_TestSpreadsheetTable.ods", "Output2_TestSpreadsheetTable.ods" ]
+  } ],
+  "testRan" : true
 }

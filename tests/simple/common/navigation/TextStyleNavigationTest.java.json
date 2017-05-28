@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/TextStyleNavigationTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/TextStyleNavigationTest.java",
+    "docsin" : [ "TestStyleSelection.odt" ],
+    "docsout" : [ "TextStyleSelectionResultInsertFront.odt", "TextStyleSelectionResultInsertEnd.odt", "TextStyleSelectionResultDelete.odt", "TextStyleSelectionResultStyle.odt" ]
+  } ],
+  "testRan" : true
+}

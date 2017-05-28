@@ -1,8 +1,8 @@
 {
-  "name" : "SpreadsheetWithoutTableCellPropertiesTest.java",
+  "name" : "common/field/TitleFieldTest.java",
   "project" : "org/odftoolkit/simple/",
   "increments" : [ {
-    "test" : "SpreadsheetWithoutTableCellPropertiesTest.java",
+    "test" : "common/field/TitleFieldTest.java",
     "docsin" : [ ],
     "docsout" : [ ]
   } ],

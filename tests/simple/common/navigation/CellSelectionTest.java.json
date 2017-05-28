@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/CellSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/CellSelectionTest.java",
+    "docsin" : [ "TestCellSelection.ods" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

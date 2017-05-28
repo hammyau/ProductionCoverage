@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/TableSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/TableSelectionTest.java",
+    "docsin" : [ "TestTextSelection.odt" ],
+    "docsout" : [ "TestTableSelectionSource.odt" ]
+  } ],
+  "testRan" : true
+}

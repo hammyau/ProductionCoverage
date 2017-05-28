@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/MONPTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/MONPTest.java",
+    "docsin" : [ "navigationtest.odt" ],
+    "docsout" : [ "testsave1.odt" ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/TextNavigationTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/TextNavigationTest.java",
+    "docsin" : [ "TestTextSelection.odt" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

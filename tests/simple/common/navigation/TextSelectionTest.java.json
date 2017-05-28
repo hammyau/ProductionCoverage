@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/TextSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/TextSelectionTest.java",
+    "docsin" : [ "TestTextSelection.odt", "TestReplaceWithBasicCases.odt", "TestTextSelectionComment.odt" ],
+    "docsout" : [ "TextSelectionResultStyle.odt", "TextSelectionResultHref.odt", "TextSelectionResultComment.odt", "TextSelectionResultReplace.odt", "TextSelectionResultCopyTo.odt", "TextSelectionResultCopyTo1.odt", "TextSelectionResultDelete.odt" ]
+  } ],
+  "testRan" : true
+}

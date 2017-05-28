@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/ImageSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/ImageSelectionTest.java",
+    "docsin" : [ "TestTextSelection.odt" ],
+    "docsout" : [ "TestImageSelectionImageResult.odt", "TestImageSelectionURIResult.odt" ]
+  } ],
+  "testRan" : true
+}

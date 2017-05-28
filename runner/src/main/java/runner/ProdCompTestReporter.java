@@ -76,6 +76,7 @@ public class ProdCompTestReporter implements FileVisitor<Path> {
 	}
 	
 	public void listTests() {
+		int num = 1;
 		for(ObjectNode test : tests) {
 			String line = String.format("%-50s", test.get("name").asText()) + " -> ";
 			if(test.get("testRan") != null) {
@@ -83,7 +84,8 @@ public class ProdCompTestReporter implements FileVisitor<Path> {
 			} else {
 				line += "Not Run";
 			}
-			System.out.println(line);
+			System.out.println(num + " " + line);
+			num++;
 		}
 	}
 

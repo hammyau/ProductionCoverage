@@ -1,25 +1,10 @@
 {
-  "name": "TextDocumentTest.java", 
-  "project": "org/odftoolkit/simple/",
-  "increments": [
-    {
-      "test": "TextDocumentTest.java",
-      "docsin": ["test2.odt",
-      "TextFieldSampleDocument.odt",
-      "headerFooterHidden.odt",
-      "TestInsertDocument.odt"
-      ],
-      "docsout": ["AddPageBreakOutput.odt",
-        "test2Out.odt",
-	"AddPageBreakWithMasterPageOutput1.odt",
-	"AddPageBreakWithMasterPageOutput2.odt",
-	"AddCommentOutput.odt",
-	"testNewTextDocument.odt",
-	"TestInsertDocumentWithStyleBefore.odt",
-	"TestInsertDocumentWithoutStyleBefore.odt",
-	"TestInsertDocumentWithStyleAfter.odt",
-	"TestInsertDocumentWithoutStyleAfter.odt"
-      ]
-    }
-  ]
+  "name" : "TextDocumentTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "TextDocumentTest.java",
+    "docsin" : [ "test2.odt", "TextFieldSampleDocument.odt", "headerFooterHidden.odt", "TestInsertDocument.odt" ],
+    "docsout" : [ "AddPageBreakOutput.odt", "test2Out.odt", "AddPageBreakWithMasterPageOutput1.odt", "AddPageBreakWithMasterPageOutput2.odt", "AddCommentOutput.odt", "testNewTextDocument.odt", "TestInsertDocumentWithStyleBefore.odt", "TestInsertDocumentWithoutStyleBefore.odt", "TestInsertDocumentWithStyleAfter.odt", "TestInsertDocumentWithoutStyleAfter.odt" ]
+  } ],
+  "testRan" : true
 }

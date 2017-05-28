@@ -1,21 +1,10 @@
 {
-  "name": "DocumentTest.java", 
-  "project": "org/odftoolkit/simple/",
-  "increments": [
-    {
-      "test": "DocumentTest.java",
-      "docsin": [
-	      "test2.odt",
-      "testDefaultLanguage.odp",
-      "presentation.odp",
-      "presentationWithEmbedDoc.odp",
-      "Spreadsheet with Embeded Chart.ods"      
-      ],
-      "docsout": [
-	      "list-out.odt",
-      "testSave.odt",
-      "HelloWorldExample.odt"
-      ]
-    }
-  ]
+  "name" : "DocumentTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "DocumentTest.java",
+    "docsin" : [ "test2.odt", "testDefaultLanguage.odp", "presentation.odp", "presentationWithEmbedDoc.odp", "Spreadsheet with Embeded Chart.ods" ],
+    "docsout" : [ "list-out.odt", "testSave.odt", "HelloWorldExample.odt" ]
+  } ],
+  "testRan" : true
 }

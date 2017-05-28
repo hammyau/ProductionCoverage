@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/ParagraphSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/ParagraphSelectionTest.java",
+    "docsin" : [ "TestTextSelection.odt" ],
+    "docsout" : [ "TestParagraphSelectionResult.odt" ]
+  } ],
+  "testRan" : true
+}

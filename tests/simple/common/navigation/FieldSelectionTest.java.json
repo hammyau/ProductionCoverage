@@ -1,0 +1,10 @@
+{
+  "name" : "common/navigation/FieldSelectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "common/navigation/FieldSelectionTest.java",
+    "docsin" : [ "TextFieldSampleDocument.odt" ],
+    "docsout" : [ "TextFieldResultStyle.odt", "TextFieldResultReplace.odt" ]
+  } ],
+  "testRan" : true
+}

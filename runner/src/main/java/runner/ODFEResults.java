@@ -30,12 +30,14 @@ public class ODFEResults {
 	private ArrayNode resultRunsArray;
 	private ObjectNode runObject;
 	private int runNumber;
+	private String currentRunName;
 
 	public ODFEResults() {
 		
 		jFactory = new JsonFactory();
 		mapper = new ObjectMapper();
 		runNumber = 0;
+		currentRunName = "";
 	}
 
 	public String getString() {
@@ -223,6 +225,7 @@ public class ODFEResults {
 		while(runNumber < resultRunsArray.size()) {
 			JsonNode runNode = resultRunsArray.get(runNumber);
 			if( runNode.get("testDoc").asText().equals(docName) ) {
+				currentRunName = runNode.get("run").asText();
 				System.out.println("Document Match for " + docName + " @ " + runNumber);
 				JsonNode dataArray = runNode.get("data");
 				return dataArray.get(dataArray.size() - 1); //Summary is last one
@@ -231,6 +234,10 @@ public class ODFEResults {
 		}
 		System.out.println("No Match for " + docName);
 		return null;
+	}
+
+	public String getCurrentRunName() {
+		return currentRunName;
 	}
 
 }

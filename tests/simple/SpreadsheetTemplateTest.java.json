@@ -1,18 +1,14 @@
 {
-  "name": "SpreadsheetTemplateTest.java", 
-  "project": "org/odftoolkit/simple/",
-  "increments": [
-    {
-      "test": "SpreadsheetTemplateTest.java",
-      "docsin": [
-      ],
-      "docsout": [
-      ],
-      "tempdocsout": [
-      	{"name": "simple-test",
-	 "ext": "ots"
-	}
-      ]
-    }
-  ]
+  "name" : "SpreadsheetTemplateTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "SpreadsheetTemplateTest.java",
+    "docsin" : [ ],
+    "docsout" : [ ],
+    "tempdocsout" : [ {
+      "name" : "simple-test",
+      "ext" : "ots"
+    } ]
+  } ],
+  "testRan" : true
 }
