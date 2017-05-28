@@ -68,7 +68,7 @@ public class ProductionComparison {
 		correlateTheResults();
 	}
 	
-	public void listTests() {
+	public void listTests() throws IOException {
 		Path testsRoot = Paths.get(runDir + "/../tests", props.getProperty(ODFPROJECT));
 		testsRoot = testsRoot.normalize();
 		EnumSet<FileVisitOption> opts = EnumSet.of(FileVisitOption.FOLLOW_LINKS);

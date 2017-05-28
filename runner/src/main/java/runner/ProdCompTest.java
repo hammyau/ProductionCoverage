@@ -132,7 +132,6 @@ public class ProdCompTest implements FileVisitor {
 		rootNode.put("testRan", true);
 		generator.writeTree(rootNode);
 		generator.close();
-		
 	}
 
 	private int addDocsin() {
