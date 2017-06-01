@@ -1,0 +1,10 @@
+{
+  "name" : "form/ButtonTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "form/ButtonTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestCreateButton.odt", "TestRemoveButton.odt", "TestSetButtonRectangle.odt", "TestSetButtonAnchorType.odt", "TestSetButtonLabel.odt" ]
+  } ],
+  "testRan" : true
+}

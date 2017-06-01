@@ -1,0 +1,10 @@
+{
+  "name" : "draw/TextBoxTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "draw/TextBoxTest.java",
+    "docsin" : [ "SampleBox.odt" ],
+    "docsout" : [ "textsample.odt", "abc.odp", "SampleBoxOutput.odt" ]
+  } ],
+  "testRan" : true
+}

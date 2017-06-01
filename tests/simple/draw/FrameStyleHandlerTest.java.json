@@ -1,0 +1,10 @@
+{
+  "name" : "draw/FrameStyleHandlerTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "draw/FrameStyleHandlerTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "textsample.odt" ]
+  } ],
+  "testRan" : true
+}

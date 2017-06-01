@@ -1,0 +1,10 @@
+{
+  "name" : "form/ComboBoxTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "form/ComboBoxTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestCreateComboBox.odt", "TestRemoveComboBox.odt", "TestSetComboBoxRectangle.odt", "TestSetComboBoxAnchorType.odt", "TestSetComboBoxProperties.odt" ]
+  } ],
+  "testRan" : true
+}

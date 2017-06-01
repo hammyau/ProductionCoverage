@@ -1,0 +1,10 @@
+{
+  "name" : "form/ListBoxTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "form/ListBoxTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestCreateListBox.odt", "TestRemoveListBox.odt", "TestSetListBoxRectangle.odt", "TestSetListBoxAnchorType.odt", "TestSetListBoxProperties.odt" ]
+  } ],
+  "testRan" : true
+}

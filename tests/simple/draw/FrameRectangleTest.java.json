@@ -1,0 +1,10 @@
+{
+  "name" : "draw/FrameRectangleTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "draw/FrameRectangleTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "textsample.odt" ]
+  } ],
+  "testRan" : true
+}

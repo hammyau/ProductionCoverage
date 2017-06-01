@@ -1,0 +1,10 @@
+{
+  "name" : "form/AbstractFormContainerTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "form/AbstractFormContainerTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestCreateForm.odt", "TestRemoveForm.odt" ]
+  } ],
+  "testRan" : true
+}

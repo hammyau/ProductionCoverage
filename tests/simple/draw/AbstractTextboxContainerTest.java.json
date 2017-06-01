@@ -1,0 +1,10 @@
+{
+  "name" : "draw/AbstractTextboxContainerTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "draw/AbstractTextboxContainerTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "imagep.odp", "textsample.odt" ]
+  } ],
+  "testRan" : true
+}

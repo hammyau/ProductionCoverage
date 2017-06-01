@@ -1,0 +1,10 @@
+{
+  "name" : "meta/OfficeMetaTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "meta/OfficeMetaTest.java",
+    "docsin" : [ "metaTest.odt" ],
+    "docsout" : [ "EmptyDocForMetaTest.odt", "DocForMetaTest.odt" ]
+  } ],
+  "testRan" : true
+}

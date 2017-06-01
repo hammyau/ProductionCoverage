@@ -1,0 +1,10 @@
+{
+  "name" : "draw/ImageTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "draw/ImageTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "imagetest.odt", "imagep.odp", "imges.odt", "imgesheet.ods", "imageFretest.odt", "imageEndtest.odt" ]
+  } ],
+  "testRan" : true
+}

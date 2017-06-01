@@ -1,0 +1,10 @@
+{
+  "name" : "form/RadioButtonTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "form/RadioButtonTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestCreateRadioButton.odt", "TestRemoveRadioButton.odt", "TestSetRadioButtonRectangle.odt", "TestSetRadioButtonAnchorType.odt", "TestSetRadioButtonLabel.odt", "TestSetRadioButtonState.odt", "TestSetRadioButtonValue.odt" ]
+  } ],
+  "testRan" : true
+}

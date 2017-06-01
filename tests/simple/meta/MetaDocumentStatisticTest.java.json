@@ -1,0 +1,10 @@
+{
+  "name" : "meta/MetaDocumentStatisticTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "meta/MetaDocumentStatisticTest.java",
+    "docsin" : [ "metaTest.odt" ],
+    "docsout" : [ "EmptyDocForMetaTest.odt" ]
+  } ],
+  "testRan" : true
+}
