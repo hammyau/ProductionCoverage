@@ -1,0 +1,10 @@
+{
+  "name" : "presentation/NotesTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "presentation/NotesTest.java",
+    "docsin" : [ "Presentation1.odp" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

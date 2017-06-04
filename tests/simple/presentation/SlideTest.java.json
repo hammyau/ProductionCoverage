@@ -1,0 +1,10 @@
+{
+  "name" : "presentation/SlideTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "presentation/SlideTest.java",
+    "docsin" : [ "Presentation1.odp", "Presentation2.odp" ],
+    "docsout" : [ "SlideResultDelete.odp", "SlideResultDelete2.odp", "SlideResultNew.odp", "SlideResultMoveAndCopy.odp", "SlideResultCopyForeignSlide2.odp", "SlideResultMerge2.odp", "SlideResultMerge1.odp", "SlideResultCopyTreeDoc.odp", "SlideTableOutput.odp", "slidetitlelayout.odp", "slidetitlelayout2.odp", "slidetitlelayout3.odp", "slidetitlelayout4.odp", "SlideTest1.odp", "SlideTest2.odp", "SlideTest3.odp" ]
+  } ],
+  "testRan" : true
+}
