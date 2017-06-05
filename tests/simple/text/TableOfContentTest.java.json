@@ -1,0 +1,10 @@
+{
+  "name" : "text/TableOfContentTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/TableOfContentTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "DefaultTOC.odt", "TOC_Styles.odt" ]
+  } ],
+  "testRan" : true
+}

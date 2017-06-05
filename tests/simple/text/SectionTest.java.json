@@ -1,0 +1,10 @@
+{
+  "name" : "text/SectionTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/SectionTest.java",
+    "docsin" : [ "Sections.odt", "SectionContinuedList.odt" ],
+    "docsout" : [ "NewSection.odt", "NewSection1.odt", "NewNewSections.odt", "NewSections.odt", "NewSection2.odt", "SectionContinuedList_updatedXmlId.odt" ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "text/SpanTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/SpanTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "spantest.odt", "spantest2.odt", "spantest3.odt", "spantest4.odt" ]
+  } ],
+  "testRan" : true
+}

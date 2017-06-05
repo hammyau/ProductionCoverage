@@ -1,0 +1,10 @@
+{
+  "name" : "text/FooterTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/FooterTest.java",
+    "docsin" : [ "FooterTableDocument.odt" ],
+    "docsout" : [ "footerHiddenOutput.odt", "footerOutput.odt", "footerOutput.odt2", "footerOutput3.odt", "footerOutput4.odt", "footerOutput5.odt", "footerOutput6.odt", "footerOutput7.odt", "footerOutput8.odt" ]
+  } ],
+  "testRan" : true
+}

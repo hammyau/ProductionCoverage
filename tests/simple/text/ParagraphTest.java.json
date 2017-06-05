@@ -1,0 +1,10 @@
+{
+  "name" : "text/ParagraphTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/ParagraphTest.java",
+    "docsin" : [ "CommentBreakHeadingDocument.odt", "Bell.odt" ],
+    "docsout" : [ "testGetParagraphByIndex.odt", "TestParagraphSetGetFont.odt", "TestParagraphSetGetHoriAlignment.odt", "TestParagraphSetGetHeading.odt", "TestParagraphHyperlink.odt" ]
+  } ],
+  "testRan" : true
+}

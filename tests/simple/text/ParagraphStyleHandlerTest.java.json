@@ -1,0 +1,10 @@
+{
+  "name" : "text/ParagraphStyleHandlerTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/ParagraphStyleHandlerTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "testParagraphStyleHandler.odt", "testParagraphStyleHandler2.odt", "testParagraphStyleHandler3.odt" ]
+  } ],
+  "testRan" : true
+}

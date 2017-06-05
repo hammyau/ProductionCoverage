@@ -1,0 +1,10 @@
+{
+  "name" : "text/HeaderTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/HeaderTest.java",
+    "docsin" : [ "HeaderTableDocument.odt" ],
+    "docsout" : [ "headerHiddenOutput.odt", "headerHiddenOutput2.odt", "headerHiddenOutput3.odt", "headerHiddenOutput4.odt", "headerHiddenOutput5.odt", "headerHiddenOutput6.odt", "headerHiddenOutput7.odt", "headerHiddenOutput8.odt" ]
+  } ],
+  "testRan" : true
+}

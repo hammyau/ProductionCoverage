@@ -1,0 +1,10 @@
+{
+  "name" : "text/list/ListTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "text/list/ListTest.java",
+    "docsin" : [ "testList.odt" ],
+    "docsout" : [ "ListOutput.odt" ]
+  } ],
+  "testRan" : true
+}
