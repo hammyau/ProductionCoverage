@@ -1,0 +1,10 @@
+{
+  "name" : "table/TableCellRangeTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/TableCellRangeTest.java",
+    "docsin" : [ "TestSpreadsheetTable.ods", "TestTextTable.odt" ],
+    "docsout" : [ "TestTextTableMergeCoveredCell.odt", "TestTextTableMergeTwoCell.odt", "TestTextTableMergeTable.odt", "TestTextTableMergeFirstColumn.odt", "TestTextTableMergeFirstTwoRow/odt", "TestSpreadsheetTableCellRangeName.ods" ]
+  } ],
+  "testRan" : true
+}

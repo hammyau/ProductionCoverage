@@ -4,16 +4,7 @@
   "increments" : [ {
     "test" : "style/StyleTypeDefinitionsTest.java",
     "docsin" : [ "TestSpreadsheetTable.ods" ],
-    "docsout" : [ "testHorizontalAlignmentType.odt",
-    "TestSpreadsheetTableOutput.ods",
-    "testSupportedLinearMeasure.ods",
-    "testCellBordersType.ods",
-    "testLineType.ods",
-    "textAnchorType.odt",
-    "textVerticalRelative.odt",
-    "testHorizontalRelative.odt",
-    "testFrameVerticalPosition.odt",
-    "testFrameHorizontalPosition.odt" ]
+    "docsout" : [ "testHorizontalAlignmentType.odt", "TestSpreadsheetTableOutput.ods", "testSupportedLinearMeasure.ods", "testCellBordersType.ods", "testLineType.ods", "textAnchorType.odt", "textVerticalRelative.odt", "testHorizontalRelative.odt", "testFrameVerticalPosition.odt", "testFrameHorizontalPosition.odt" ]
   } ],
-  "testRan" : false
+  "testRan" : true
 }

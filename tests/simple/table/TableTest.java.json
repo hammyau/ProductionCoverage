@@ -1,0 +1,10 @@
+{
+  "name" : "table/TableTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/TableTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "CreateTableCase.odt", "TestSetGetWidth.odt", "TestGetSetName.odt" ]
+  } ],
+  "testRan" : true
+}

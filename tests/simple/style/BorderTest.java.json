@@ -4,12 +4,7 @@
   "increments" : [ {
     "test" : "style/BorderTest.java",
     "docsin" : [ "testGetCellAt.ods" ],
-    "docsout" : ["testGetSetBorder.ods",
-    "testSetWidth.ods",
-    "testSGetInnerLineWidth.ods",
-    "testSGetDistance.ods",
-    "testSGetOuterLineWidth.ods",
-    "testSGetLinearMeasure.ods" ]
+    "docsout" : [ "testGetSetBorder.ods", "testSetWidth.ods", "testSGetInnerLineWidth.ods", "testSGetDistance.ods", "testSGetOuterLineWidth.ods", "testSGetLinearMeasure.ods" ]
   } ],
-  "testRan" : false
+  "testRan" : true
 }

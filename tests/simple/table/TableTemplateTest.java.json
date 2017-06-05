@@ -1,0 +1,10 @@
+{
+  "name" : "table/TableTemplateTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/TableTemplateTest.java",
+    "docsin" : [ "TestTableTemplate.odt" ],
+    "docsout" : [ "TestApplyColumnStyledTableTemplate.odt", "TestApplyRowStyledTableTemplate.odt", "TestReApplyTableTemplate.odt", "TestApplyTemplateWithNoParagraphStyle.odt", "TestApplyEmptyTemplate.odt" ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "table/CellStyleHandlerTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/CellStyleHandlerTest.java",
+    "docsin" : [ "CellStyleHandlerTest.odp" ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "table/TableRowColumnTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/TableRowColumnTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestTextTableChangeSize.odt", "TestTextTableLocalColumnWidth.odt", "TestTextTableSplitRepeatedColumns.odt", "TestTextTableChangeIndex.odt" ]
+  } ],
+  "testRan" : true
+}

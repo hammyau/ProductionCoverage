@@ -3,14 +3,8 @@
   "project" : "org/odftoolkit/simple/",
   "increments" : [ {
     "test" : "style/TableCellPropertiesTest.java",
-    "docsin" : [  ],
-    "docsout" : [ "TableCelltestSetBorders.ods",
-    "TableCelltestSetBorders_DIAGONAL_LINES.ods",
-    "TableCelltestGetBorder.ods",
-    "testSupportedGetLeftBorder.ods",
-    "testSettingNullBackgroundOnProperties.ods",
-    "testSettingBlackBackgroundOnProperties.ods",
-    "testSettingNullBackgroundOnCell.ods" ]
+    "docsin" : [ ],
+    "docsout" : [ "TableCelltestSetBorders.ods", "TableCelltestSetBorders_DIAGONAL_LINES.ods", "TableCelltestGetBorder.ods", "testSupportedGetLeftBorder.ods", "testSettingNullBackgroundOnProperties.ods", "testSettingBlackBackgroundOnProperties.ods", "testSettingNullBackgroundOnCell.ods" ]
   } ],
-  "testRan" : false
+  "testRan" : true
 }

@@ -3,22 +3,8 @@
   "project" : "org/odftoolkit/simple/",
   "increments" : [ {
     "test" : "style/TextPropertiesTest.java",
-    "docsin" : [  ],
-    "docsout" : [ "testFontOutput89.ods",
-    "testFontOutput1.ods",
-    "testFontOutput2.ods",
-    "testFontOutput3.ods",
-    "testFontOutput4.ods",
-    "testFontOutput5.ods",
-    "testFontOutput6.ods",
-    "testFontOutput7.ods",
-    "testFontOutput8.ods",
-    "testFontOutput9.ods",
-    "testFontOutput10.ods",
-    "testFontOutput11.ods",
-    "testFontOutput12.ods",
-    "testFontOutput13.ods",
-    "testFontOutput14.ods"]
+    "docsin" : [ ],
+    "docsout" : [ "testFontOutput89.ods", "testFontOutput1.ods", "testFontOutput2.ods", "testFontOutput3.ods", "testFontOutput4.ods", "testFontOutput5.ods", "testFontOutput6.ods", "testFontOutput7.ods", "testFontOutput8.ods", "testFontOutput9.ods", "testFontOutput10.ods", "testFontOutput11.ods", "testFontOutput12.ods", "testFontOutput13.ods", "testFontOutput14.ods" ]
   } ],
-  "testRan" : false
+  "testRan" : true
 }

@@ -1,0 +1,10 @@
+{
+  "name" : "table/TableBuilderTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "table/TableBuilderTest.java",
+    "docsin" : [ ],
+    "docsout" : [ ]
+  } ],
+  "testRan" : true
+}

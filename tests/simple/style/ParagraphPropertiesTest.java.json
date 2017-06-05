@@ -4,8 +4,7 @@
   "increments" : [ {
     "test" : "style/ParagraphPropertiesTest.java",
     "docsin" : [ ],
-    "docsout" : [ "TestParagraphPropertiesSetGetHoriAlignment.odt",
-    "TestParagraphPropertiesSetGetBgnColor.odt" ]
+    "docsout" : [ "TestParagraphPropertiesSetGetHoriAlignment.odt", "TestParagraphPropertiesSetGetBgnColor.odt" ]
   } ],
-  "testRan" : false
+  "testRan" : true
 }
