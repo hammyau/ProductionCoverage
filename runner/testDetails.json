@@ -1,0 +1,749 @@
+{
+  "details" : [ {
+    "name" : "chart/ChartTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "chart/ChartTest.java",
+      "docsin" : [ "SpreadsheetWithChart.ods", "TestCreateChartWithLocalData.ods", "ChartTest.ods" ],
+      "docsout" : [ "SpreadsheetWithAppendedChart.ods", "TestCreateChartWithCellRange.ods", "TestRemoveChart.ods", "TestODTChart.odt", "TestODPChart.odp" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "chart/ChartTypeTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "chart/ChartTypeTest.java",
+      "docsin" : [ "headerFooterHidden.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "chart/DataSetTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "chart/DataSetTest.java",
+      "docsin" : [ "ChartTest.ods" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "ChartTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "ChartTemplateTest.java",
+      "docsin" : [ "chartTestTemplate.otc" ],
+      "tempdocsout" : [ {
+        "name" : "simple-test",
+        "ext" : "otc"
+      } ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/ChapterFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/ChapterFieldTest.java",
+      "docsin" : [ "headerFooterHidden.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/ConditionFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/ConditionFieldTest.java",
+      "docsin" : [ "TextFieldSampleDocument.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/FieldsTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/FieldsTest.java",
+      "docsin" : [ "TextFieldSampleDocument.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/PageNumberFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/PageNumberFieldTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/SubjectFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/SubjectFieldTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/TitleFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/TitleFieldTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/field/VariableFieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/field/VariableFieldTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/GetTextTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/GetTextTest.java",
+      "docsin" : [ "text-extract.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/CellSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/CellSelectionTest.java",
+      "docsin" : [ "TestCellSelection.ods" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/FieldSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/FieldSelectionTest.java",
+      "docsin" : [ "TextFieldSampleDocument.odt" ],
+      "docsout" : [ "TextFieldResultStyle.odt", "TextFieldResultReplace.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/ImageSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/ImageSelectionTest.java",
+      "docsin" : [ "TestTextSelection.odt" ],
+      "docsout" : [ "TestImageSelectionImageResult.odt", "TestImageSelectionURIResult.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/MONPTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/MONPTest.java",
+      "docsin" : [ "navigationtest.odt" ],
+      "docsout" : [ "testsave1.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/ParagraphSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/ParagraphSelectionTest.java",
+      "docsin" : [ "TestTextSelection.odt" ],
+      "docsout" : [ "TestParagraphSelectionResult.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/TableSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/TableSelectionTest.java",
+      "docsin" : [ "TestTextSelection.odt" ],
+      "docsout" : [ "TestTableSelectionSource.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/TextDocumentSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/TextDocumentSelectionTest.java",
+      "docsin" : [ "TestTextSelection.odt" ],
+      "docsout" : [ "TestTextDocumentSelectionResult.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/TextNavigationTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/TextNavigationTest.java",
+      "docsin" : [ "TestTextSelection.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/TextSelectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/TextSelectionTest.java",
+      "docsin" : [ "TestTextSelection.odt", "TestReplaceWithBasicCases.odt", "TestTextSelectionComment.odt" ],
+      "docsout" : [ "TextSelectionResultStyle.odt", "TextSelectionResultHref.odt", "TextSelectionResultComment.odt", "TextSelectionResultReplace.odt", "TextSelectionResultCopyTo.odt", "TextSelectionResultCopyTo1.odt", "TextSelectionResultDelete.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/navigation/TextStyleNavigationTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/navigation/TextStyleNavigationTest.java",
+      "docsin" : [ "TestStyleSelection.odt" ],
+      "docsout" : [ "TextStyleSelectionResultInsertFront.odt", "TextStyleSelectionResultInsertEnd.odt", "TextStyleSelectionResultDelete.odt", "TextStyleSelectionResultStyle.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "common/WhitespaceProcessorTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "common/WhitespaceProcessorTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "DocumentCreationTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "DocumentCreationTest.java",
+      "docsin" : [ "testEmbeddedDoc.odt" ],
+      "docsout" : [ "TestAccess_EmbeddedDocument.odt", "TestAccess_EmbeddedinEmbedded.odt", "testSaveEmbeddedDoc.odt", "TestSaveEmbeddedDoc_newName.odt", "TestSaveEmbeddedDoc2.odt", "TestSaveQueerEmbeddedPathDoc1.odt", "CorruptedMimetypeDoc.odt", "TestSaveCorruptedMimetypeDoc.odt", "CorruptedMimetypeChart.odc", "TestSaveCorruptedMimetypeChart.odc", "TestEmpty_OdfTextDocument.odt", "TestEmpty_OdfGraphicsDocument.odg", "TestEmpty_OdfSpreadsheetDocument.ods", "TestEmpty_OdfPresentationDocument.odp", "TestEmpty_OdfChartDocument.odc", "simple-wiki-package.odt", "simple-wiki-dom.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "DocumentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "DocumentTest.java",
+      "docsin" : [ "test2.odt", "testDefaultLanguage.odp", "presentation.odp", "presentationWithEmbedDoc.odp", "Spreadsheet with Embeded Chart.ods" ],
+      "docsout" : [ "list-out.odt", "testSave.odt", "HelloWorldExample.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "draw/AbstractTextboxContainerTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "draw/AbstractTextboxContainerTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "imagep.odp", "textsample.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "draw/FrameRectangleTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "draw/FrameRectangleTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "textsample.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "draw/FrameStyleHandlerTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "draw/FrameStyleHandlerTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "textsample.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "draw/ImageTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "draw/ImageTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "imagetest.odt", "imagep.odp", "imges.odt", "imgesheet.ods", "imageFretest.odt", "imageEndtest.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "draw/TextBoxTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "draw/TextBoxTest.java",
+      "docsin" : [ "SampleBox.odt" ],
+      "docsout" : [ "textsample.odt", "abc.odp", "SampleBoxOutput.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/AbstractFormContainerTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/AbstractFormContainerTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateForm.odt", "TestRemoveForm.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/ButtonTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/ButtonTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateButton.odt", "TestRemoveButton.odt", "TestSetButtonRectangle.odt", "TestSetButtonAnchorType.odt", "TestSetButtonLabel.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/CheckBoxTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/CheckBoxTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "CreatedCheckBox.odt", "testRemoveCheckBox.odt", "testRemoveCheckBox_OUT.odt", "testSetCheckBoxRectangle.odt", "testSetCheckBoxRectangle_OUT.odt", "TestSetCheckBoxAnchorType.odt", "TestSetCheckBoxAnchorType_OUT.odt", "TestSetCheckBoxLabel.odt", "TestSetCheckBoxLabel_OUT.odt", "TestSetCheckBoxState.odt", "TestSetCheckBoxState_OUT.odt", "TestSetCheckBoxValue.odt", "TestSetCheckBoxValue_OUT.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/ComboBoxTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/ComboBoxTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateComboBox.odt", "TestRemoveComboBox.odt", "TestSetComboBoxRectangle.odt", "TestSetComboBoxAnchorType.odt", "TestSetComboBoxProperties.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/FieldTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/FieldTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateField.odt", "TestRemoveField.odt", "TestSetFieldRectangle.odt", "TestSetFieldAnchorType.odt", "TestSetFormatValue.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/LabelTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/LabelTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateLabel.odt", "TestRemoveLabel.odt", "TestSetLabelRectangle.odt", "TestSetLabelAnchorType.odt", "TestSetLabelLabel.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/ListBoxTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/ListBoxTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateListBox.odt", "TestRemoveListBox.odt", "TestSetListBoxRectangle.odt", "TestSetListBoxAnchorType.odt", "TestSetListBoxProperties.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/RadioButtonTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/RadioButtonTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateRadioButton.odt", "TestRemoveRadioButton.odt", "TestSetRadioButtonRectangle.odt", "TestSetRadioButtonAnchorType.odt", "TestSetRadioButtonLabel.odt", "TestSetRadioButtonState.odt", "TestSetRadioButtonValue.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "form/TextBoxTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "form/TextBoxTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestCreateTextBox.odt", "TestRemoveTextBox.odt", "TestSetTextBoxRectangle.odt", "TestSetTextBoxAnchorType.odt", "TestSetTextBoxContent.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "GraphicsDocumentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "GraphicsDocumentTest.java",
+      "docsin" : [ "graphicTestTemplate.otg" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "GraphicsTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "GraphicsTemplateTest.java",
+      "docsin" : [ "graphicTestTemplate.otg" ],
+      "docsout" : [ "simple-test.otg" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "LoadSaveTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "LoadSaveTest.java",
+      "docsin" : [ "not-only-odf.odt" ],
+      "docsout" : [ "loadsavetest.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "meta/MetaDocumentStatisticTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "meta/MetaDocumentStatisticTest.java",
+      "docsin" : [ "metaTest.odt" ],
+      "docsout" : [ "EmptyDocForMetaTest.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "meta/OfficeMetaTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "meta/OfficeMetaTest.java",
+      "docsin" : [ "metaTest.odt" ],
+      "docsout" : [ "EmptyDocForMetaTest.odt", "DocForMetaTest.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "presentation/NotesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "presentation/NotesTest.java",
+      "docsin" : [ "Presentation1.odp" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "presentation/SlideTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "presentation/SlideTest.java",
+      "docsin" : [ "Presentation1.odp", "Presentation2.odp" ],
+      "docsout" : [ "SlideResultDelete.odp", "SlideResultDelete2.odp", "SlideResultNew.odp", "SlideResultMoveAndCopy.odp", "SlideResultCopyForeignSlide2.odp", "SlideResultMerge2.odp", "SlideResultMerge1.odp", "SlideResultCopyTreeDoc.odp", "SlideTableOutput.odp", "slidetitlelayout.odp", "slidetitlelayout2.odp", "slidetitlelayout3.odp", "slidetitlelayout4.odp", "SlideTest1.odp", "SlideTest2.odp", "SlideTest3.odp" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "presentation/TableTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "presentation/TableTest.java",
+      "docsin" : [ "PresentationTableTest.odp" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "PresentationTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "PresentationTemplateTest.java",
+      "docsin" : [ "presentationTestTemplate.otp" ],
+      "tempdocsout" : [ {
+        "name" : "simple-test",
+        "ext" : ".otp"
+      } ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "PresentationTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "PresentationTest.java",
+      "docsin" : [ "presentation.odp" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "SpreadsheetDocumentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "SpreadsheetDocumentTest.java",
+      "docsin" : [ "spreadsheetTestTemplate.ots", "ExcelDummyRowProblem_rows0.ods", "ExcelDummyRowProblem_rows1.ods", "TestSpreadsheetTable.ods" ],
+      "docsout" : [ ],
+      "tempdocsout" : [ {
+        "name" : "Chart_spreadsheetTestTemplate.ods",
+        "ext" : "tmp"
+      } ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "SpreadsheetIteratorTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "SpreadsheetIteratorTest.java",
+      "docsin" : [ "SpreadsheetIteratorTest.ods" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "SpreadsheetTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "SpreadsheetTemplateTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ],
+      "tempdocsout" : [ {
+        "name" : "simple-test",
+        "ext" : "ots"
+      } ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "SpreadsheetTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "SpreadsheetTest.java",
+      "docsin" : [ "TestSpreadsheetTable.ods" ],
+      "docsout" : [ "Output_TestSpreadsheetTable.ods", "Output2_TestSpreadsheetTable.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "SpreadsheetWithoutTableCellPropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "SpreadsheetWithoutTableCellPropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/BorderTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/BorderTest.java",
+      "docsin" : [ "testGetCellAt.ods" ],
+      "docsout" : [ "testGetSetBorder.ods", "testSetWidth.ods", "testSGetInnerLineWidth.ods", "testSGetDistance.ods", "testSGetOuterLineWidth.ods", "testSGetLinearMeasure.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/FontTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/FontTest.java",
+      "docsin" : [ "testGetCellAt.ods" ],
+      "docsout" : [ "testFontOutput.ods", "testFontOutput1.ods", "testFontOutput2.ods", "testFontOutput3.ods", "testFontOutput4.ods", "testFontOutput5.ods", "testFontOutput6.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/PageLayoutPropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/PageLayoutPropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "PageLayoutTestGetSetMargins.odt", "PageLayoutTestGetSetPageSize.odt", "PageLayoutTestGetSetNumformat.odt", "PageLayoutTestGetSetWritingMode.odt", "PageLayoutTestGetSetPrintOrientation.odt", "PageLayoutTestGetSetMax.odt", "PageLayoutTestGetSetFootnoeSep.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/ParagraphPropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/ParagraphPropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestParagraphPropertiesSetGetHoriAlignment.odt", "TestParagraphPropertiesSetGetBgnColor.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/StyleTypeDefinitionsTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/StyleTypeDefinitionsTest.java",
+      "docsin" : [ "TestSpreadsheetTable.ods" ],
+      "docsout" : [ "testHorizontalAlignmentType.odt", "TestSpreadsheetTableOutput.ods", "testSupportedLinearMeasure.ods", "testCellBordersType.ods", "testLineType.ods", "textAnchorType.odt", "textVerticalRelative.odt", "testHorizontalRelative.odt", "testFrameVerticalPosition.odt", "testFrameHorizontalPosition.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/TableCellPropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/TableCellPropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TableCelltestSetBorders.ods", "TableCelltestSetBorders_DIAGONAL_LINES.ods", "TableCelltestGetBorder.ods", "testSupportedGetLeftBorder.ods", "testSettingNullBackgroundOnProperties.ods", "testSettingBlackBackgroundOnProperties.ods", "testSettingNullBackgroundOnCell.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/TablePropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/TablePropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "AAAA1.ods", "AAAA2.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "style/TextPropertiesTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "style/TextPropertiesTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "testFontOutput89.ods", "testFontOutput1.ods", "testFontOutput2.ods", "testFontOutput3.ods", "testFontOutput4.ods", "testFontOutput5.ods", "testFontOutput6.ods", "testFontOutput7.ods", "testFontOutput8.ods", "testFontOutput9.ods", "testFontOutput10.ods", "testFontOutput11.ods", "testFontOutput12.ods", "testFontOutput13.ods", "testFontOutput14.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/CellStyleHandlerTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/CellStyleHandlerTest.java",
+      "docsin" : [ "CellStyleHandlerTest.odp" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableBuilderTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableBuilderTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableCellRangeTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableCellRangeTest.java",
+      "docsin" : [ "TestSpreadsheetTable.ods", "TestTextTable.odt" ],
+      "docsout" : [ "TestTextTableMergeCoveredCell.odt", "TestTextTableMergeTwoCell.odt", "TestTextTableMergeTable.odt", "TestTextTableMergeFirstColumn.odt", "TestTextTableMergeFirstTwoRow/odt", "TestSpreadsheetTableCellRangeName.ods" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableCellTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableCellTest.java",
+      "docsin" : [ "TestSpreadsheetTable.ods", "TestTextTable.odt" ],
+      "docsout" : [ "TestSpreadsheetStyleTabletestGetSetHoriAlignment", "TestSpreadsheetStyleTabletestGetSetVertAlignment", "TestSpreadsheetStyleTabletestGetSetValueType", "TestSpreadsheetStyleTabletestGetSetWrapOption", "TestSpreadsheetStyleTabletestGetSetTextValue", "TestSpreadsheetStyleTabletestSetGetFormat", "TestSpreadsheetStyleTabletestGetSetCellBackgroundColor", "TestSpreadsheetStyleTabletestGetSetCellBackgroundColor2", "TestSpreadsheetStyleTabletestGetSetColumnSpannedNumber", "TestSpreadsheetStyleTabletestGetSetColumnSpannedNumber2", "TestSpreadsheetStyleTabletestGetSetColumnSpannedNumber3", "TestSpreadsheetStyleTabletestGetSetRowSpannedNumber", "TestSpreadsheetStyleTabletestGetSetRowSpannedNumber2", "TestSpreadsheetStyleTabletestGetSetRowSpannedNumber3", "TestSpreadsheetStyleTabletestGetSetColumnsRepeatedNumber", "TestSpreadsheetStyleTabletestGetSetColumnsRepeatedNumber2", "TestSpreadsheetStyleTabletestGetSetColumnsRepeatedNumber3", "TestSpreadsheetStyleTabletestGetSetDateValue", "TestSpreadsheetStyleTabletestDateTimeValue", "TestSpreadsheetStyleTabletestGetSetStringValue", "TestSpreadsheetStyleTabletestGetSetStringValue1", "TestSpreadsheetStyleTabletestGetSetBooleanValue", "TestSpreadsheetStyleTabletestGetSetCurrencyValue", "TestSpreadsheetStyleTabletestGetSetCurrencyDesc", "TestSpreadsheetStyleTabletestGetSetPercentageValue", "TestSpreadsheetStyleTabletestGetSetTimeValue", "TestSpreadsheetStyleTabletestGetSetFormula", "TestSpreadsheetStyleTabletestRemoveContent", "TestSpreadsheetStyleTabletestRemoveTextContent", "TestSpreadsheetStyleTabletestGetSetDisplayText", "TestSpreadsheetStyleTabletestGetSetDisplayText2", "TestSpreadsheetStyleTabletestGetSetFormatString", "TestSpreadsheetStyleTabletestGetSetCurrencyFormat", "TestSpreadsheetStyleTabletestGetSetNoteText", "TestSpreadsheetStyleTabletestSetValidityListAndInputHelpMessage", "TestSpreadsheetStyleTabletestSetValidityListAndInputErrorMessage" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableRowColumnTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableRowColumnTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "TestTextTableChangeSize.odt", "TestTextTableLocalColumnWidth.odt", "TestTextTableSplitRepeatedColumns.odt", "TestTextTableChangeIndex.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableTemplateTest.java",
+      "docsin" : [ "TestTableTemplate.odt" ],
+      "docsout" : [ "TestApplyColumnStyledTableTemplate.odt", "TestApplyRowStyledTableTemplate.odt", "TestReApplyTableTemplate.odt", "TestApplyTemplateWithNoParagraphStyle.odt", "TestApplyEmptyTemplate.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "table/TableTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "table/TableTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "CreateTableCase.odt", "TestSetGetWidth.odt", "TestGetSetName.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "DocumentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "DocumentTest.java",
+      "docsin" : [ ],
+      "docsout" : [ ]
+    } ]
+  }, {
+    "name" : "text/FooterTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/FooterTest.java",
+      "docsin" : [ "FooterTableDocument.odt" ],
+      "docsout" : [ "footerHiddenOutput.odt", "footerOutput.odt", "footerOutput.odt2", "footerOutput3.odt", "footerOutput4.odt", "footerOutput5.odt", "footerOutput6.odt", "footerOutput7.odt", "footerOutput8.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/HeaderTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/HeaderTest.java",
+      "docsin" : [ "HeaderTableDocument.odt" ],
+      "docsout" : [ "headerHiddenOutput.odt", "headerHiddenOutput2.odt", "headerHiddenOutput3.odt", "headerHiddenOutput4.odt", "headerHiddenOutput5.odt", "headerHiddenOutput6.odt", "headerHiddenOutput7.odt", "headerHiddenOutput8.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/list/ListItemTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/list/ListItemTest.java",
+      "docsin" : [ "testList.odt", "testList2.odt" ],
+      "docsout" : [ ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/list/ListTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/list/ListTest.java",
+      "docsin" : [ "testList.odt" ],
+      "docsout" : [ "ListOutput.odt" ]
+    } ],
+    "testRan" : false
+  }, {
+    "name" : "text/ParagraphStyleHandlerTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/ParagraphStyleHandlerTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "testParagraphStyleHandler.odt", "testParagraphStyleHandler2.odt", "testParagraphStyleHandler3.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/ParagraphTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/ParagraphTest.java",
+      "docsin" : [ "CommentBreakHeadingDocument.odt", "Bell.odt" ],
+      "docsout" : [ "testGetParagraphByIndex.odt", "TestParagraphSetGetFont.odt", "TestParagraphSetGetHoriAlignment.odt", "TestParagraphSetGetHeading.odt", "TestParagraphHyperlink.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/SectionTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/SectionTest.java",
+      "docsin" : [ "Sections.odt", "SectionContinuedList.odt" ],
+      "docsout" : [ "NewSection.odt", "NewSection1.odt", "NewNewSections.odt", "NewSections.odt", "NewSection2.odt", "SectionContinuedList_updatedXmlId.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/SpanTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/SpanTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "spantest.odt", "spantest2.odt", "spantest3.odt", "spantest4.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "text/TableOfContentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "text/TableOfContentTest.java",
+      "docsin" : [ ],
+      "docsout" : [ "DefaultTOC.odt", "TOC_Styles.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "TextDocumentTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "TextDocumentTest.java",
+      "docsin" : [ "test2.odt", "TextFieldSampleDocument.odt", "headerFooterHidden.odt", "TestInsertDocument.odt" ],
+      "docsout" : [ "AddPageBreakOutput.odt", "test2Out.odt", "AddPageBreakWithMasterPageOutput1.odt", "AddPageBreakWithMasterPageOutput2.odt", "AddCommentOutput.odt", "testNewTextDocument.odt", "TestInsertDocumentWithStyleBefore.odt", "TestInsertDocumentWithoutStyleBefore.odt", "TestInsertDocumentWithStyleAfter.odt", "TestInsertDocumentWithoutStyleAfter.odt" ]
+    } ],
+    "testRan" : true
+  }, {
+    "name" : "TextTemplateTest.java",
+    "project" : "org/odftoolkit/simple/",
+    "increments" : [ {
+      "test" : "TextTemplateTest.java",
+      "docsin" : [ "textTestTemplate.ott" ],
+      "docsout" : [ ],
+      "tempdocsout" : [ {
+        "name" : "simple-test",
+        "ext" : "ott"
+      } ]
+    } ],
+    "testRan" : true
+  } ]
+}
