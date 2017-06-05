@@ -89,12 +89,10 @@ public class ProdCompTestReporter implements FileVisitor<Path> {
 		int num = 1;
 		for(ObjectNode test : tests) {
 			String line = String.format("%-50s", test.get("name").asText()) + " -> ";
-			if(test.get("testRan") != null) {
+			if(test.get("testRan") != null && test.get("testRan").asBoolean() == false) {
 				line += test.get("testRan").asText();
-			} else {
-				line += "Not Run";
-			}
-			System.out.println(num + " " + line);
+				System.out.println(num + " " + line);
+			} 
 			testDetailsArray.add(test);
 			num++;
 		}

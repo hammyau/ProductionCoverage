@@ -53,7 +53,7 @@ public class TestCounter implements FileVisitor<Path> {
 
 	public void reportTests() {
 		for(String t: tests) {
-			System.out.println(t);
+			//System.out.println(t);
 		}
 		
 	}
