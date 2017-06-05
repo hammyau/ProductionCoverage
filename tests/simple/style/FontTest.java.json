@@ -1,0 +1,16 @@
+{
+  "name" : "style/FontTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "style/FontTest.java",
+    "docsin" : [ "testGetCellAt.ods" ],
+    "docsout" : [ "testFontOutput.ods",
+    "testFontOutput1.ods",
+    "testFontOutput2.ods",
+    "testFontOutput3.ods",
+    "testFontOutput4.ods",
+    "testFontOutput5.ods",
+    "testFontOutput6.ods" ]
+  } ],
+  "testRan" : false
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "style/ParagraphPropertiesTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "style/ParagraphPropertiesTest.java",
+    "docsin" : [ ],
+    "docsout" : [ "TestParagraphPropertiesSetGetHoriAlignment.odt",
+    "TestParagraphPropertiesSetGetBgnColor.odt" ]
+  } ],
+  "testRan" : false
+}

@@ -1,0 +1,10 @@
+{
+  "name" : "style/TablePropertiesTest.java",
+  "project" : "org/odftoolkit/simple/",
+  "increments" : [ {
+    "test" : "style/TablePropertiesTest.java",
+    "docsin" : [  ],
+    "docsout" : [ "AAAA1.ods", "AAAA2.ods" ]
+  } ],
+  "testRan" : false
+}
