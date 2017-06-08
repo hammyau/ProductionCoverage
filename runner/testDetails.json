@@ -677,7 +677,7 @@
       "docsin" : [ "testList.odt" ],
       "docsout" : [ "ListOutput.odt" ]
     } ],
-    "testRan" : false
+    "testRan" : true
   }, {
     "name" : "text/ParagraphStyleHandlerTest.java",
     "project" : "org/odftoolkit/simple/",

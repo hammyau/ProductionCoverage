@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import org.junit.Test;
 
@@ -62,12 +63,23 @@ public class ReadConfigTest {
 	}
 
 	@Test
+	public void runDetailTests() throws FileNotFoundException, IOException {
+		ProductionComparison pc = new ProductionComparison();
+		assert(pc.isODFEDirSet());
+		assert(pc.isODFToolkitDirSet());
+		TestDetails tests = new TestDetails(Paths.get("testDetails.json"));
+		tests.intFromJSON();
+		tests.runNotExercised(pc);
+		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
+	}
+
+	@Test
 	public void runNamedTest() throws FileNotFoundException, IOException {
 		ProductionComparison pc = new ProductionComparison();
 		assert(pc.isODFEDirSet());
 		assert(pc.isODFToolkitDirSet());
 		
-		pc.runSingleTest("../tests/simple/common/GetTextTest.java.json");
+		pc.runSingleTest("../tests/simple/text/list/ListTest.java.json");
 		assert(pc.getNumberOfOriginalTests() > 0 && pc.getNumberOfStoredTests() == 0);
 	}
 
@@ -114,6 +126,12 @@ public class ReadConfigTest {
 		pc.listTests();
 		pc.getNumberOfStoredTests();
 
+	}
+
+	@Test
+	public void clearTests() throws FileNotFoundException, IOException {
+		TestDetails tests = new TestDetails(Paths.get("testDetails.json"));
+		tests.markAllNotRun();
 	}
 
 }
